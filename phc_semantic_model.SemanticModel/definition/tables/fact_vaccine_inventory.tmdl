@@ -1,0 +1,214 @@
+table fact_vaccine_inventory
+	lineageTag: 5d7c84a5-aaab-4a2e-85e5-5d54477a51b8
+	sourceLineageTag: [dbo].[fact_vaccine_inventory]
+
+	column facility_id
+		dataType: string
+		lineageTag: 04464138-f16e-4ce4-8107-9b6d5d47e182
+		sourceLineageTag: facility_id
+		summarizeBy: none
+		sourceColumn: facility_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column vaccine_id
+		dataType: string
+		lineageTag: 54592066-fd6e-41ac-b9a2-9a40931caf7b
+		sourceLineageTag: vaccine_id
+		summarizeBy: none
+		sourceColumn: vaccine_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column vaccine_name
+		dataType: string
+		lineageTag: 8d715afb-715d-4b4a-9390-c74917a23550
+		sourceLineageTag: vaccine_name
+		summarizeBy: none
+		sourceColumn: vaccine_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column vaccine_category
+		dataType: string
+		lineageTag: c774c5e5-f2d9-4513-837b-d848a376cdf8
+		sourceLineageTag: vaccine_category
+		summarizeBy: none
+		sourceColumn: vaccine_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column presentation
+		dataType: string
+		lineageTag: d4b4e108-f2c5-4fa7-aa28-0b76accabec2
+		sourceLineageTag: presentation
+		summarizeBy: none
+		sourceColumn: presentation
+
+		annotation SummarizationSetBy = Automatic
+
+	column dose_volume
+		dataType: string
+		lineageTag: 16747dda-dd7b-42cf-bac7-7aa1b7b064fd
+		sourceLineageTag: dose_volume
+		summarizeBy: none
+		sourceColumn: dose_volume
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_of_measure
+		dataType: string
+		lineageTag: 3fad682a-469a-4f01-ab99-6af97b3f05fa
+		sourceLineageTag: unit_of_measure
+		summarizeBy: none
+		sourceColumn: unit_of_measure
+
+		annotation SummarizationSetBy = Automatic
+
+	column inventory_record_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 17e74288-f97a-4809-92a3-1e9578ca7d97
+		sourceLineageTag: inventory_record_date
+		summarizeBy: none
+		sourceColumn: inventory_record_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column stock_level
+		dataType: int64
+		formatString: 0
+		lineageTag: 636c6ec2-6ec3-46b7-ba34-9646fb63f9b0
+		sourceLineageTag: stock_level
+		summarizeBy: sum
+		sourceColumn: stock_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column minimum_stock_level
+		dataType: int64
+		formatString: 0
+		lineageTag: 4957eb33-b0f0-4f38-aae4-c1b63be9c429
+		sourceLineageTag: minimum_stock_level
+		summarizeBy: sum
+		sourceColumn: minimum_stock_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column maximum_stock_level
+		dataType: int64
+		formatString: 0
+		lineageTag: 674ed7d8-a69b-4bdd-b352-2b13a90591c8
+		sourceLineageTag: maximum_stock_level
+		summarizeBy: sum
+		sourceColumn: maximum_stock_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column average_monthly_consumption
+		dataType: int64
+		formatString: 0
+		lineageTag: 3880b922-7ccf-4119-a613-d11099a5059e
+		sourceLineageTag: average_monthly_consumption
+		summarizeBy: sum
+		sourceColumn: average_monthly_consumption
+
+		annotation SummarizationSetBy = Automatic
+
+	column days_of_stock_remaining
+		dataType: double
+		lineageTag: 80c04bd7-6ace-453d-85cd-5e9469bf29cb
+		sourceLineageTag: days_of_stock_remaining
+		summarizeBy: sum
+		sourceColumn: days_of_stock_remaining
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stock_status
+		dataType: string
+		lineageTag: 14bb1990-1df6-487a-8747-6f4a7ae33f95
+		sourceLineageTag: stock_status
+		summarizeBy: none
+		sourceColumn: stock_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_restock_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f03bc77e-4d56-416c-b433-54f48d328f0c
+		sourceLineageTag: last_restock_date
+		summarizeBy: none
+		sourceColumn: last_restock_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity_last_restocked
+		dataType: int64
+		formatString: 0
+		lineageTag: f0eeca95-f3d0-4f22-9435-a29ba917285f
+		sourceLineageTag: quantity_last_restocked
+		summarizeBy: sum
+		sourceColumn: quantity_last_restocked
+
+		annotation SummarizationSetBy = Automatic
+
+	column batch_number
+		dataType: string
+		lineageTag: f9bc58ef-bf80-44ca-baad-81e1cd988e48
+		sourceLineageTag: batch_number
+		summarizeBy: none
+		sourceColumn: batch_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column expiry_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e7696674-88c8-407d-86ed-a197a7ffa1bb
+		sourceLineageTag: expiry_date
+		summarizeBy: none
+		sourceColumn: expiry_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column cold_chain_required
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: efbadf27-0d9d-4627-a961-31d5f84d83ac
+		sourceLineageTag: cold_chain_required
+		summarizeBy: none
+		sourceColumn: cold_chain_required
+
+		annotation SummarizationSetBy = Automatic
+
+	column cold_chain_uptime_pct
+		dataType: double
+		lineageTag: 950c1be5-60db-47ec-980f-9bebac0630cc
+		sourceLineageTag: cold_chain_uptime_pct
+		summarizeBy: sum
+		sourceColumn: cold_chain_uptime_pct
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column temperature_excursion_count
+		dataType: int64
+		formatString: 0
+		lineageTag: afabc0d6-4ce4-457b-b7c7-7f2ca70d0afc
+		sourceLineageTag: temperature_excursion_count
+		summarizeBy: sum
+		sourceColumn: temperature_excursion_count
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_vaccine_inventory = entity
+		mode: directLake
+		source
+			entityName: fact_vaccine_inventory
+			schemaName: dbo
+			expressionSource: 'DirectLake - phc_lakehouse'
+

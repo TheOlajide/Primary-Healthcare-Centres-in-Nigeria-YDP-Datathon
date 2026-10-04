@@ -1,0 +1,14 @@
+[
+  {
+    "name": "phc_centres",
+    "path": "/Files",
+    "target": {
+      "type": "OneDriveSharePoint",
+      "oneDriveSharePoint": {
+        "connectionId": "3eaad94c-9c7d-4851-a3b8-8024344f6246",
+        "location": "https://q5kj-my.sharepoint.com",
+        "subpath": "/personal/olajide_q5kj_onmicrosoft_com/Documents/phc_centres"
+      }
+    }
+  }
+]

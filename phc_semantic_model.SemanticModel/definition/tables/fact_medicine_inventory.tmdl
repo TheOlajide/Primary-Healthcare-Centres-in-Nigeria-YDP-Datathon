@@ -1,0 +1,189 @@
+table fact_medicine_inventory
+	lineageTag: 181bec59-fcc2-47e2-a335-ee58de7a37f6
+	sourceLineageTag: [dbo].[fact_medicine_inventory]
+
+	column facility_id
+		dataType: string
+		lineageTag: 09fd286b-bb74-48d8-94d1-56d142c1c924
+		sourceLineageTag: facility_id
+		summarizeBy: none
+		sourceColumn: facility_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column medicine_id
+		dataType: string
+		lineageTag: 4637cfcb-a7f4-4b6a-a3a1-9e7435cec439
+		sourceLineageTag: medicine_id
+		summarizeBy: none
+		sourceColumn: medicine_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column medicine_name
+		dataType: string
+		lineageTag: a3e1b5c4-fe2d-4d86-a043-17cb49996d19
+		sourceLineageTag: medicine_name
+		summarizeBy: none
+		sourceColumn: medicine_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column medicine_category
+		dataType: string
+		lineageTag: 5df21e11-8fe5-417c-b042-115df12d70cc
+		sourceLineageTag: medicine_category
+		summarizeBy: none
+		sourceColumn: medicine_category
+
+		annotation SummarizationSetBy = Automatic
+
+	column dosage_form
+		dataType: string
+		lineageTag: a71e7bcc-96e9-45f4-90ea-29e406aaea4d
+		sourceLineageTag: dosage_form
+		summarizeBy: none
+		sourceColumn: dosage_form
+
+		annotation SummarizationSetBy = Automatic
+
+	column strength
+		dataType: string
+		lineageTag: f2d52ae4-8df9-432c-aa05-cb2da31d6bea
+		sourceLineageTag: strength
+		summarizeBy: none
+		sourceColumn: strength
+
+		annotation SummarizationSetBy = Automatic
+
+	column unit_of_measure
+		dataType: string
+		lineageTag: 8ad69c34-7764-44f2-a19e-f4814cd4fa5e
+		sourceLineageTag: unit_of_measure
+		summarizeBy: none
+		sourceColumn: unit_of_measure
+
+		annotation SummarizationSetBy = Automatic
+
+	column inventory_record_date
+		dataType: string
+		lineageTag: 1b282ec7-9fcd-483e-afb6-66034f5cab05
+		sourceLineageTag: inventory_record_date
+		summarizeBy: none
+		sourceColumn: inventory_record_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column stock_level
+		dataType: int64
+		formatString: 0
+		lineageTag: 1092294e-4d77-45d6-ba64-2fd5d0b89524
+		sourceLineageTag: stock_level
+		summarizeBy: sum
+		sourceColumn: stock_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column minimum_stock_level
+		dataType: int64
+		formatString: 0
+		lineageTag: d03103fe-a95d-4ab5-ae2f-86185bb33bf1
+		sourceLineageTag: minimum_stock_level
+		summarizeBy: sum
+		sourceColumn: minimum_stock_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column maximum_stock_level
+		dataType: int64
+		formatString: 0
+		lineageTag: 62b67669-8591-44a4-b9e5-956d0c8559d0
+		sourceLineageTag: maximum_stock_level
+		summarizeBy: sum
+		sourceColumn: maximum_stock_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column average_monthly_consumption
+		dataType: int64
+		formatString: 0
+		lineageTag: 1adf366b-0377-4793-be79-cc0320e4a725
+		sourceLineageTag: average_monthly_consumption
+		summarizeBy: sum
+		sourceColumn: average_monthly_consumption
+
+		annotation SummarizationSetBy = Automatic
+
+	column days_of_stock_remaining
+		dataType: double
+		lineageTag: caac07ba-aa28-4986-868d-06088f7c06e6
+		sourceLineageTag: days_of_stock_remaining
+		summarizeBy: sum
+		sourceColumn: days_of_stock_remaining
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stock_status
+		dataType: string
+		lineageTag: a0ec6aca-48d3-4889-8c22-2ac7a8ff70b5
+		sourceLineageTag: stock_status
+		summarizeBy: none
+		sourceColumn: stock_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_restock_date
+		dataType: string
+		lineageTag: 3145e353-3dc4-4595-9698-9163d247eb9a
+		sourceLineageTag: last_restock_date
+		summarizeBy: none
+		sourceColumn: last_restock_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column quantity_last_restocked
+		dataType: int64
+		formatString: 0
+		lineageTag: ba5eb90b-5545-4a15-9d2f-1a3796f6ecb7
+		sourceLineageTag: quantity_last_restocked
+		summarizeBy: sum
+		sourceColumn: quantity_last_restocked
+
+		annotation SummarizationSetBy = Automatic
+
+	column supplier_type
+		dataType: string
+		lineageTag: ebfa37e8-6744-4b27-8745-0300fc4e539a
+		sourceLineageTag: supplier_type
+		summarizeBy: none
+		sourceColumn: supplier_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column batch_number
+		dataType: string
+		lineageTag: 88c4dc32-f8c3-4988-a80b-d3be32509266
+		sourceLineageTag: batch_number
+		summarizeBy: none
+		sourceColumn: batch_number
+
+		annotation SummarizationSetBy = Automatic
+
+	column expiry_date
+		dataType: string
+		lineageTag: a7b1ba3c-820c-41f4-82ea-bff928a49cd3
+		sourceLineageTag: expiry_date
+		summarizeBy: none
+		sourceColumn: expiry_date
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_medicine_inventory = entity
+		mode: directLake
+		source
+			entityName: fact_medicine_inventory
+			schemaName: dbo
+			expressionSource: 'DirectLake - phc_lakehouse'
+

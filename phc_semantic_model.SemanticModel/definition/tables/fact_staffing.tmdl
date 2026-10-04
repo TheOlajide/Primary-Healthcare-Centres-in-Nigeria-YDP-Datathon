@@ -1,0 +1,133 @@
+table fact_staffing
+	lineageTag: 3948334b-c619-48bc-a2d8-09eee3d5ed35
+	sourceLineageTag: [dbo].[fact_staffing]
+
+	column facility_id
+		dataType: string
+		lineageTag: 06246776-8108-4523-9108-399e194ce36e
+		sourceLineageTag: facility_id
+		summarizeBy: none
+		sourceColumn: facility_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column staff_id
+		dataType: string
+		lineageTag: 60a0a428-6384-48e9-a516-8c5d617f5cc2
+		sourceLineageTag: staff_id
+		summarizeBy: none
+		sourceColumn: staff_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column first_name
+		dataType: string
+		lineageTag: 81a471ea-0a32-4140-8861-96729158a7ea
+		sourceLineageTag: first_name
+		summarizeBy: none
+		sourceColumn: first_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column last_name
+		dataType: string
+		lineageTag: d92a818f-b8eb-467c-8f93-65ed53d89bf1
+		sourceLineageTag: last_name
+		summarizeBy: none
+		sourceColumn: last_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column gender
+		dataType: string
+		lineageTag: 6a975db2-e495-42d9-81a8-cf91e1012ec5
+		sourceLineageTag: gender
+		summarizeBy: none
+		sourceColumn: gender
+
+		annotation SummarizationSetBy = Automatic
+
+	column role
+		dataType: string
+		lineageTag: 2802fa65-030b-4680-8a00-abd9734dd649
+		sourceLineageTag: role
+		summarizeBy: none
+		sourceColumn: role
+
+		annotation SummarizationSetBy = Automatic
+
+	column employment_type
+		dataType: string
+		lineageTag: 841786bf-6521-43a5-b450-3c3b6cb1fd40
+		sourceLineageTag: employment_type
+		summarizeBy: none
+		sourceColumn: employment_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column qualification_level
+		dataType: string
+		lineageTag: fdfe518c-c2aa-451a-bde8-06283b0a8da0
+		sourceLineageTag: qualification_level
+		summarizeBy: none
+		sourceColumn: qualification_level
+
+		annotation SummarizationSetBy = Automatic
+
+	column years_of_experience
+		dataType: int64
+		formatString: 0
+		lineageTag: 5f5d989b-a514-495b-9875-f2dee92f0301
+		sourceLineageTag: years_of_experience
+		summarizeBy: sum
+		sourceColumn: years_of_experience
+
+		annotation SummarizationSetBy = Automatic
+
+	column employment_start_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: f4a2f53e-2b18-4062-bf1d-db9a0d16010e
+		sourceLineageTag: employment_start_date
+		summarizeBy: none
+		sourceColumn: employment_start_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column record_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: c6ee6c96-59f0-489d-91e1-7c78ccf5daa5
+		sourceLineageTag: record_date
+		summarizeBy: none
+		sourceColumn: record_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column is_active
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 2a3c2139-858b-4624-837e-c779445eb775
+		sourceLineageTag: is_active
+		summarizeBy: none
+		sourceColumn: is_active
+
+		annotation SummarizationSetBy = Automatic
+
+	column days_absent
+		dataType: int64
+		formatString: 0
+		lineageTag: ca376247-7371-417f-b68c-6553b03d85a8
+		sourceLineageTag: days_absent
+		summarizeBy: sum
+		sourceColumn: days_absent
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_staffing = entity
+		mode: directLake
+		source
+			entityName: fact_staffing
+			schemaName: dbo
+			expressionSource: 'DirectLake - phc_lakehouse'
+

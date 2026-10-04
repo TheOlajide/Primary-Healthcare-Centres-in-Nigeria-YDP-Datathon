@@ -1,0 +1,295 @@
+table fact_phc_facilities
+	lineageTag: 1c019fe5-efe4-4906-9cbc-4a051f1ed220
+	sourceLineageTag: [dbo].[fact_phc_facilities]
+
+	column facility_id
+		dataType: string
+		lineageTag: dc6105f8-310d-4a37-b250-ce2522559734
+		sourceLineageTag: facility_id
+		summarizeBy: none
+		sourceColumn: facility_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column facility_name
+		dataType: string
+		lineageTag: ae019e22-9da5-4808-a818-0b8a46d5d30e
+		sourceLineageTag: facility_name
+		summarizeBy: none
+		sourceColumn: facility_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column state_code
+		dataType: string
+		lineageTag: 3547a61b-adff-4955-8eca-16f8bc9cfe4f
+		sourceLineageTag: state_code
+		summarizeBy: none
+		sourceColumn: state_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column state_name
+		dataType: string
+		lineageTag: 4798b1af-d34b-4111-8e33-eaedf13b3727
+		sourceLineageTag: state_name
+		summarizeBy: none
+		sourceColumn: state_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column lga_code
+		dataType: string
+		lineageTag: fcf4c940-6883-4fe0-a6a1-50eddeb2296a
+		sourceLineageTag: lga_code
+		summarizeBy: none
+		sourceColumn: lga_code
+
+		annotation SummarizationSetBy = Automatic
+
+	column lga_name
+		dataType: string
+		lineageTag: 138b84a7-e6cf-41ce-9dc0-8d6452f32fea
+		sourceLineageTag: lga_name
+		summarizeBy: none
+		sourceColumn: lga_name
+
+		annotation SummarizationSetBy = Automatic
+
+	column latitude
+		dataType: double
+		lineageTag: 0d00e596-d4ab-4b3a-a30f-a2744e869cf9
+		sourceLineageTag: latitude
+		summarizeBy: sum
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longitude
+		dataType: double
+		lineageTag: 890d9553-6b29-4cd3-8bc2-92328316b777
+		sourceLineageTag: longitude
+		summarizeBy: sum
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column facility_type
+		dataType: string
+		lineageTag: 0ec6f6cb-5272-4de8-ae08-bcf118fa53f8
+		sourceLineageTag: facility_type
+		summarizeBy: none
+		sourceColumn: facility_type
+
+		annotation SummarizationSetBy = Automatic
+
+	column ownership
+		dataType: string
+		lineageTag: 8dc7d07e-f219-48d0-b1ab-86d1205a8075
+		sourceLineageTag: ownership
+		summarizeBy: none
+		sourceColumn: ownership
+
+		annotation SummarizationSetBy = Automatic
+
+	column urban_rural_class
+		dataType: string
+		lineageTag: 3ebaa156-1022-479c-871e-696ffdf5d41e
+		sourceLineageTag: urban_rural_class
+		summarizeBy: none
+		sourceColumn: urban_rural_class
+
+		annotation SummarizationSetBy = Automatic
+
+	column catchment_population
+		dataType: int64
+		formatString: 0
+		lineageTag: b358609a-f777-436e-ba64-323dcf853b29
+		sourceLineageTag: catchment_population
+		summarizeBy: sum
+		sourceColumn: catchment_population
+
+		annotation SummarizationSetBy = Automatic
+
+	column operational_status
+		dataType: string
+		lineageTag: 9cb533f3-cf70-404c-9e00-c327e9a1884c
+		sourceLineageTag: operational_status
+		summarizeBy: none
+		sourceColumn: operational_status
+
+		annotation SummarizationSetBy = Automatic
+
+	column number_of_beds
+		dataType: int64
+		formatString: 0
+		lineageTag: 8191cd7b-a0ba-4f4e-8e4d-b619399190d2
+		sourceLineageTag: number_of_beds
+		summarizeBy: sum
+		sourceColumn: number_of_beds
+
+		annotation SummarizationSetBy = Automatic
+
+	column total_health_workers
+		dataType: int64
+		formatString: 0
+		lineageTag: 6afc5137-246c-4986-b3d2-4e1c96c91505
+		sourceLineageTag: total_health_workers
+		summarizeBy: sum
+		sourceColumn: total_health_workers
+
+		annotation SummarizationSetBy = Automatic
+
+	column doctors
+		dataType: int64
+		formatString: 0
+		lineageTag: bd1ac7a7-a7aa-48cb-ad36-00e488c920f1
+		sourceLineageTag: doctors
+		summarizeBy: sum
+		sourceColumn: doctors
+
+		annotation SummarizationSetBy = Automatic
+
+	column nurses
+		dataType: int64
+		formatString: 0
+		lineageTag: 4c76afd8-9d1d-4691-9545-c3b11bd55b57
+		sourceLineageTag: nurses
+		summarizeBy: sum
+		sourceColumn: nurses
+
+		annotation SummarizationSetBy = Automatic
+
+	column midwives
+		dataType: int64
+		formatString: 0
+		lineageTag: 54fb7f04-f9cc-427e-bf90-7760699bab43
+		sourceLineageTag: midwives
+		summarizeBy: sum
+		sourceColumn: midwives
+
+		annotation SummarizationSetBy = Automatic
+
+	column community_health_workers
+		dataType: int64
+		formatString: 0
+		lineageTag: 2b9a0e57-f084-49c7-a421-341f10fd18a1
+		sourceLineageTag: community_health_workers
+		summarizeBy: sum
+		sourceColumn: community_health_workers
+
+		annotation SummarizationSetBy = Automatic
+
+	column pharmacists
+		dataType: int64
+		formatString: 0
+		lineageTag: 5209994f-a9a4-4026-9dd0-7cfcf8042fde
+		sourceLineageTag: pharmacists
+		summarizeBy: sum
+		sourceColumn: pharmacists
+
+		annotation SummarizationSetBy = Automatic
+
+	column laboratory_staff
+		dataType: int64
+		formatString: 0
+		lineageTag: 718b5d92-8248-4b8b-bc64-4792a6096e8a
+		sourceLineageTag: laboratory_staff
+		summarizeBy: sum
+		sourceColumn: laboratory_staff
+
+		annotation SummarizationSetBy = Automatic
+
+	column other_health_workers
+		dataType: int64
+		formatString: 0
+		lineageTag: 13fe8f1f-dab9-42b0-a55a-835a8ffaef6e
+		sourceLineageTag: other_health_workers
+		summarizeBy: sum
+		sourceColumn: other_health_workers
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_electricity
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 5d02f140-9ab2-464a-97f3-982879669287
+		sourceLineageTag: has_electricity
+		summarizeBy: none
+		sourceColumn: has_electricity
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_water
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 0b58cf4e-6b22-4f27-893a-9b62ce020460
+		sourceLineageTag: has_water
+		summarizeBy: none
+		sourceColumn: has_water
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_refrigerator
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 989803f7-0b2b-4fc5-97ac-1fbca3644f6b
+		sourceLineageTag: has_refrigerator
+		summarizeBy: none
+		sourceColumn: has_refrigerator
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_cold_chain
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e4638c2a-0a7a-4957-bfc0-c555fe2d1f06
+		sourceLineageTag: has_cold_chain
+		summarizeBy: none
+		sourceColumn: has_cold_chain
+
+		annotation SummarizationSetBy = Automatic
+
+	column has_storage_room
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 389b5d8d-3c1b-4b89-89ce-8369fb04a4a2
+		sourceLineageTag: has_storage_room
+		summarizeBy: none
+		sourceColumn: has_storage_room
+
+		annotation SummarizationSetBy = Automatic
+
+	column distance_to_lga_hq_km
+		dataType: double
+		lineageTag: 6ca59628-13b7-4026-b2b4-5084d4f1da37
+		sourceLineageTag: distance_to_lga_hq_km
+		summarizeBy: sum
+		sourceColumn: distance_to_lga_hq_km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column distance_to_major_road_km
+		dataType: double
+		lineageTag: 5e036196-f2b1-4d8e-9abc-7d315cb41ff8
+		sourceLineageTag: distance_to_major_road_km
+		summarizeBy: sum
+		sourceColumn: distance_to_major_road_km
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fact_phc_facilities = entity
+		mode: directLake
+		source
+			entityName: fact_phc_facilities
+			schemaName: dbo
+			expressionSource: 'DirectLake - phc_lakehouse'
+

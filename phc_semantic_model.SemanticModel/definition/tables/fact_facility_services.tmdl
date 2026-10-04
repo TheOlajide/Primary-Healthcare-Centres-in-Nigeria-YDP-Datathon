@@ -1,0 +1,220 @@
+table fact_facility_services
+	lineageTag: 6b9e078a-8c4a-4273-9995-14873fc2a0c5
+	sourceLineageTag: [dbo].[fact_facility_services]
+
+	column facility_id
+		dataType: string
+		lineageTag: 28752967-4a3e-410b-b12b-07192fbd5418
+		sourceLineageTag: facility_id
+		summarizeBy: none
+		sourceColumn: facility_id
+
+		annotation SummarizationSetBy = Automatic
+
+	column record_date
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: e0e0df6c-e947-4d08-8824-233b1ca0d870
+		sourceLineageTag: record_date
+		summarizeBy: none
+		sourceColumn: record_date
+
+		annotation SummarizationSetBy = Automatic
+
+	column outpatient_visits
+		dataType: int64
+		formatString: 0
+		lineageTag: eaa979cb-e2c9-4ceb-83f6-25e7ae7536ca
+		sourceLineageTag: outpatient_visits
+		summarizeBy: sum
+		sourceColumn: outpatient_visits
+
+		annotation SummarizationSetBy = Automatic
+
+	column antenatal_visits
+		dataType: int64
+		formatString: 0
+		lineageTag: 69cc4ab4-6686-45f2-8633-818ca733804e
+		sourceLineageTag: antenatal_visits
+		summarizeBy: sum
+		sourceColumn: antenatal_visits
+
+		annotation SummarizationSetBy = Automatic
+
+	column deliveries
+		dataType: int64
+		formatString: 0
+		lineageTag: 73a23674-4095-447a-9255-c521efdb9ec3
+		sourceLineageTag: deliveries
+		summarizeBy: sum
+		sourceColumn: deliveries
+
+		annotation SummarizationSetBy = Automatic
+
+	column immunization_visits
+		dataType: int64
+		formatString: 0
+		lineageTag: 5cdace96-e845-4738-98c4-cd06420926a2
+		sourceLineageTag: immunization_visits
+		summarizeBy: sum
+		sourceColumn: immunization_visits
+
+		annotation SummarizationSetBy = Automatic
+
+	column under_five_visits
+		dataType: int64
+		formatString: 0
+		lineageTag: 1acb76d0-2250-4944-bbba-e12f02ac9c9b
+		sourceLineageTag: under_five_visits
+		summarizeBy: sum
+		sourceColumn: under_five_visits
+
+		annotation SummarizationSetBy = Automatic
+
+	column family_planning_visits
+		dataType: int64
+		formatString: 0
+		lineageTag: 36da5c38-2e5b-4c4f-ba24-4760344e1649
+		sourceLineageTag: family_planning_visits
+		summarizeBy: sum
+		sourceColumn: family_planning_visits
+
+		annotation SummarizationSetBy = Automatic
+
+	column malaria_cases
+		dataType: int64
+		formatString: 0
+		lineageTag: ad75d948-3818-4762-a2a3-42d31b8205ec
+		sourceLineageTag: malaria_cases
+		summarizeBy: sum
+		sourceColumn: malaria_cases
+
+		annotation SummarizationSetBy = Automatic
+
+	column maternal_health_service_availability
+		dataType: double
+		lineageTag: e0a6640e-cf01-4747-a99b-78a8115c701c
+		sourceLineageTag: maternal_health_service_availability
+		summarizeBy: sum
+		sourceColumn: maternal_health_service_availability
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column child_health_service_availability
+		dataType: double
+		lineageTag: 0bfe668e-941d-4c87-a687-e641b7fb3266
+		sourceLineageTag: child_health_service_availability
+		summarizeBy: sum
+		sourceColumn: child_health_service_availability
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column immunization_service_availability
+		dataType: double
+		lineageTag: 6a107930-7ce4-4551-9463-413f1a7ebb3b
+		sourceLineageTag: immunization_service_availability
+		summarizeBy: sum
+		sourceColumn: immunization_service_availability
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column essential_medicine_availability
+		dataType: double
+		lineageTag: 37acc2f6-013a-413d-95aa-ed14e4af9905
+		sourceLineageTag: essential_medicine_availability
+		summarizeBy: sum
+		sourceColumn: essential_medicine_availability
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column staffing_adequacy
+		dataType: double
+		lineageTag: a9a8f6dd-f52e-4fcc-96a2-3281082549b0
+		sourceLineageTag: staffing_adequacy
+		summarizeBy: sum
+		sourceColumn: staffing_adequacy
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column equipment_availability
+		dataType: double
+		lineageTag: de5494b5-c7d1-4f60-8125-be75b1a6ee2d
+		sourceLineageTag: equipment_availability
+		summarizeBy: sum
+		sourceColumn: equipment_availability
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column electricity_availability
+		dataType: double
+		lineageTag: 5ff87fee-4aef-453f-a587-80a3191cae8c
+		sourceLineageTag: electricity_availability
+		summarizeBy: sum
+		sourceColumn: electricity_availability
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column water_availability
+		dataType: double
+		lineageTag: c749717a-9e82-4717-b8ff-52051200ccf6
+		sourceLineageTag: water_availability
+		summarizeBy: sum
+		sourceColumn: water_availability
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column service_readiness_score
+		dataType: double
+		lineageTag: caf45ca7-25e4-47d1-a88b-90cc2f9ff978
+		sourceLineageTag: service_readiness_score
+		summarizeBy: sum
+		sourceColumn: service_readiness_score
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column reporting_completeness
+		dataType: double
+		lineageTag: cee05f8c-b5e6-4b43-9870-61849bc0548b
+		sourceLineageTag: reporting_completeness
+		summarizeBy: sum
+		sourceColumn: reporting_completeness
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column service_disruption_days
+		dataType: int64
+		formatString: 0
+		lineageTag: ca8b3295-a3e3-4558-950e-8c8cdadc7c43
+		sourceLineageTag: service_disruption_days
+		summarizeBy: sum
+		sourceColumn: service_disruption_days
+
+		annotation SummarizationSetBy = Automatic
+
+	partition fact_facility_services = entity
+		mode: directLake
+		source
+			entityName: fact_facility_services
+			schemaName: dbo
+			expressionSource: 'DirectLake - phc_lakehouse'
+

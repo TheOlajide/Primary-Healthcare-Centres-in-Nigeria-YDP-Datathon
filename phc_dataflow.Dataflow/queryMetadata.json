@@ -1,0 +1,29 @@
+{
+  "formatVersion": "202502",
+  "computeEngineSettings": {
+    "allowModernEvaluationEngine": true
+  },
+  "name": "phc_dataflow",
+  "queryGroups": [],
+  "documentLocale": "en-US",
+  "queriesMetadata": {
+    "DefaultDestination": {
+      "queryId": "6d6404a3-b18f-4337-b75d-ee727bd4c0fd",
+      "queryName": "DefaultDestination",
+      "isHidden": true,
+      "loadEnabled": false
+    },
+    "fact_vaccine_inventory": {
+      "queryId": "63851204-2c7f-474c-859a-9cb53038bd4b",
+      "queryName": "fact_vaccine_inventory",
+      "loadEnabled": false
+    }
+  },
+  "connections": [
+    {
+      "path": "Lakehouse",
+      "kind": "Lakehouse",
+      "connectionId": "{\"ClusterId\":\"ed5728c7-78e3-4cf5-85f9-0abc1173363e\",\"DatasourceId\":\"9bc15a52-d3bc-4fc8-9303-417cd587288d\"}"
+    }
+  ]
+}
