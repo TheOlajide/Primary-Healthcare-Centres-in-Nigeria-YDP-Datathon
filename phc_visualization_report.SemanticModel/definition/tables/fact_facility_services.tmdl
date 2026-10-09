@@ -1,0 +1,259 @@
+table fact_facility_services
+	lineageTag: c16cc280-5f91-4941-9e39-ca09be7a8eda
+	sourceLineageTag: 6b9e078a-8c4a-4273-9995-14873fc2a0c5
+
+	measure 'Service Readiness Score' =
+			
+			DIVIDE(
+			    AVERAGE(fact_facility_services[service_readiness_score]),100
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: measures
+		lineageTag: b66b1ec8-1caf-4f61-8426-9bc78bbe423b
+
+		changedProperty = FormatString
+
+	measure 'Service Risk Score' =
+			
+			1 - [Service Readiness Score]
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: measures
+		lineageTag: 8ee1d39e-c4f2-417b-ae39-4de5b3987961
+
+		changedProperty = FormatString
+
+	column facility_id
+		dataType: string
+		lineageTag: 32f15c68-7f55-4112-b6f5-4ed9addbc663
+		sourceLineageTag: 28752967-4a3e-410b-b12b-07192fbd5418
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: facility_id
+
+		annotation SummarizationSetBy = User
+
+	column record_date
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: f35bbbe8-108d-4ba1-92b7-376ac968a38b
+		sourceLineageTag: e0e0df6c-e947-4d08-8824-233b1ca0d870
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: record_date
+
+		annotation SummarizationSetBy = User
+
+	column outpatient_visits
+		dataType: int64
+		formatString: 0
+		lineageTag: 15c7efa1-9360-4f5d-92af-9c181b4e600f
+		sourceLineageTag: eaa979cb-e2c9-4ceb-83f6-25e7ae7536ca
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: outpatient_visits
+
+		annotation SummarizationSetBy = User
+
+	column antenatal_visits
+		dataType: int64
+		formatString: 0
+		lineageTag: d7608d59-7c7a-45a5-9c83-f1f63c1fbaa7
+		sourceLineageTag: 69cc4ab4-6686-45f2-8633-818ca733804e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: antenatal_visits
+
+		annotation SummarizationSetBy = User
+
+	column deliveries
+		dataType: int64
+		formatString: 0
+		lineageTag: 6734fc1f-9bac-48cf-b0f2-dc8185c04e37
+		sourceLineageTag: 73a23674-4095-447a-9255-c521efdb9ec3
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: deliveries
+
+		annotation SummarizationSetBy = User
+
+	column immunization_visits
+		dataType: int64
+		formatString: 0
+		lineageTag: cc3ab197-4530-43ec-bd1f-5a7bb5bd021e
+		sourceLineageTag: 5cdace96-e845-4738-98c4-cd06420926a2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: immunization_visits
+
+		annotation SummarizationSetBy = User
+
+	column under_five_visits
+		dataType: int64
+		formatString: 0
+		lineageTag: 119f6137-9bcc-451e-b158-79ca6c3cc922
+		sourceLineageTag: 1acb76d0-2250-4944-bbba-e12f02ac9c9b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: under_five_visits
+
+		annotation SummarizationSetBy = User
+
+	column family_planning_visits
+		dataType: int64
+		formatString: 0
+		lineageTag: 1b524a01-9cf0-458d-bf6e-d6e66f71f1ed
+		sourceLineageTag: 36da5c38-2e5b-4c4f-ba24-4760344e1649
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: family_planning_visits
+
+		annotation SummarizationSetBy = User
+
+	column malaria_cases
+		dataType: int64
+		formatString: 0
+		lineageTag: 43a62a88-8bdc-48ff-b1c5-cbeedde2bd95
+		sourceLineageTag: ad75d948-3818-4762-a2a3-42d31b8205ec
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: malaria_cases
+
+		annotation SummarizationSetBy = User
+
+	column maternal_health_service_availability
+		dataType: double
+		lineageTag: 13d327d9-7009-41ce-8837-ec0cd9c3eb62
+		sourceLineageTag: e0a6640e-cf01-4747-a99b-78a8115c701c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: maternal_health_service_availability
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column child_health_service_availability
+		dataType: double
+		lineageTag: 54168dd1-8cb1-4105-b5ab-eb0243e37d86
+		sourceLineageTag: 0bfe668e-941d-4c87-a687-e641b7fb3266
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: child_health_service_availability
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column immunization_service_availability
+		dataType: double
+		lineageTag: 555f2459-0c45-4c51-85d2-8a74820ec2b5
+		sourceLineageTag: 6a107930-7ce4-4551-9463-413f1a7ebb3b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: immunization_service_availability
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column essential_medicine_availability
+		dataType: double
+		lineageTag: d8a5c0d0-e835-43cf-b236-69d1fcdae2a0
+		sourceLineageTag: 37acc2f6-013a-413d-95aa-ed14e4af9905
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: essential_medicine_availability
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column staffing_adequacy
+		dataType: double
+		lineageTag: 26af3e8d-4362-4c99-9c08-2bd8f08e170c
+		sourceLineageTag: a9a8f6dd-f52e-4fcc-96a2-3281082549b0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: staffing_adequacy
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column equipment_availability
+		dataType: double
+		lineageTag: 4c557ff6-35e8-4a4a-b4d7-a13ca3335d74
+		sourceLineageTag: de5494b5-c7d1-4f60-8125-be75b1a6ee2d
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: equipment_availability
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column electricity_availability
+		dataType: double
+		lineageTag: b9afb237-1400-4721-ab1e-3cb6866a328a
+		sourceLineageTag: 5ff87fee-4aef-453f-a587-80a3191cae8c
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: electricity_availability
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column water_availability
+		dataType: double
+		lineageTag: 5cbca3a7-9e12-458c-b640-3046a3c74f16
+		sourceLineageTag: c749717a-9e82-4717-b8ff-52051200ccf6
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: water_availability
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column service_readiness_score
+		dataType: double
+		lineageTag: 48551ca6-cccd-4b4c-98b6-cd8997ff01a3
+		sourceLineageTag: caf45ca7-25e4-47d1-a88b-90cc2f9ff978
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: service_readiness_score
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column reporting_completeness
+		dataType: double
+		lineageTag: 31b51f1b-fd35-4c74-9be5-e8a1462fdb6d
+		sourceLineageTag: cee05f8c-b5e6-4b43-9870-61849bc0548b
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: reporting_completeness
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column service_disruption_days
+		dataType: int64
+		formatString: 0
+		lineageTag: a9f11ba3-fa98-499a-b75f-9c85b2f7e187
+		sourceLineageTag: ca8b3295-a3e3-4558-950e-8c8cdadc7c43
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: service_disruption_days
+
+		annotation SummarizationSetBy = User
+
+	partition fact_facility_services = entity
+		mode: directQuery
+		source
+			entityName: fact_facility_services
+			expressionSource: 'DirectQuery to AS - phc_semantic_model'
+

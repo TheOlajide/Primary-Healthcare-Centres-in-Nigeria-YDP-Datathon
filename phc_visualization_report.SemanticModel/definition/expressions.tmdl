@@ -1,0 +1,11 @@
+expression 'DirectQuery to AS - phc_semantic_model' =
+		let
+		    Source = AnalysisServices.Database("powerbi://api.powerbi.com/v1.0/myorg/Ydp%20datathon", "phc_semantic_model"),
+		    Cubes = Table.Combine(Source[Data]),
+		    Cube = Cubes{[Id="Model", Kind="Cube"]}[Data]
+		in
+		    Cube
+	lineageTag: 03804ffd-baaf-4245-a54b-b34cf82ffc7e
+
+	annotation PBI_IncludeFutureArtifacts = True
+

@@ -1,0 +1,145 @@
+table fact_staffing
+	lineageTag: 318b55af-e888-4502-b8a1-b2aa0fcc2249
+	sourceLineageTag: 3948334b-c619-48bc-a2d8-09eee3d5ed35
+
+	column facility_id
+		dataType: string
+		lineageTag: aa73004b-eeac-4585-b189-77486b0aaabc
+		sourceLineageTag: 06246776-8108-4523-9108-399e194ce36e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: facility_id
+
+		annotation SummarizationSetBy = User
+
+	column staff_id
+		dataType: string
+		lineageTag: 37bfeec9-023e-47ff-a671-222ecd73de8b
+		sourceLineageTag: 60a0a428-6384-48e9-a516-8c5d617f5cc2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: staff_id
+
+		annotation SummarizationSetBy = User
+
+	column first_name
+		dataType: string
+		lineageTag: 26fc7332-da55-4085-91f1-a1bc89c3c691
+		sourceLineageTag: 81a471ea-0a32-4140-8861-96729158a7ea
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: first_name
+
+		annotation SummarizationSetBy = User
+
+	column last_name
+		dataType: string
+		lineageTag: 143ec85b-011f-4173-99ae-70304d4b9042
+		sourceLineageTag: d92a818f-b8eb-467c-8f93-65ed53d89bf1
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: last_name
+
+		annotation SummarizationSetBy = User
+
+	column gender
+		dataType: string
+		lineageTag: c1ffc9c7-3f06-4f14-b48b-b933448f005b
+		sourceLineageTag: 6a975db2-e495-42d9-81a8-cf91e1012ec5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: gender
+
+		annotation SummarizationSetBy = User
+
+	column role
+		dataType: string
+		lineageTag: 5b7b261f-a8d0-4f9e-a487-6f183c418874
+		sourceLineageTag: 2802fa65-030b-4680-8a00-abd9734dd649
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: role
+
+		annotation SummarizationSetBy = User
+
+	column employment_type
+		dataType: string
+		lineageTag: e2ecc663-ed1d-4bf4-8a62-56729448b069
+		sourceLineageTag: 841786bf-6521-43a5-b450-3c3b6cb1fd40
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: employment_type
+
+		annotation SummarizationSetBy = User
+
+	column qualification_level
+		dataType: string
+		lineageTag: 0e4ca4de-2f11-442c-b306-768d803985ed
+		sourceLineageTag: fdfe518c-c2aa-451a-bde8-06283b0a8da0
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: qualification_level
+
+		annotation SummarizationSetBy = User
+
+	column years_of_experience
+		dataType: int64
+		formatString: 0
+		lineageTag: c939d11d-b418-4b22-88b2-0b4444a2a2c0
+		sourceLineageTag: 5f5d989b-a514-495b-9875-f2dee92f0301
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: years_of_experience
+
+		annotation SummarizationSetBy = User
+
+	column employment_start_date
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 38762c52-d3ec-4f9a-897a-6747e8a663d7
+		sourceLineageTag: f4a2f53e-2b18-4062-bf1d-db9a0d16010e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: employment_start_date
+
+		annotation SummarizationSetBy = User
+
+	column record_date
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 897672de-68a9-49d0-9a18-ddf3071bfedf
+		sourceLineageTag: c6ee6c96-59f0-489d-91e1-7c78ccf5daa5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: record_date
+
+		annotation SummarizationSetBy = User
+
+	column is_active
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: e58e7e00-b68a-4d0b-b3a3-7e4df6cec376
+		sourceLineageTag: 2a3c2139-858b-4624-837e-c779445eb775
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: is_active
+
+		annotation SummarizationSetBy = User
+
+	column days_absent
+		dataType: int64
+		formatString: 0
+		lineageTag: bafeaa96-77ea-4507-9f08-13681be774dd
+		sourceLineageTag: ca376247-7371-417f-b68c-6553b03d85a8
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: days_absent
+
+		annotation SummarizationSetBy = User
+
+	partition fact_staffing = entity
+		mode: directQuery
+		source
+			entityName: fact_staffing
+			expressionSource: 'DirectQuery to AS - phc_semantic_model'
+

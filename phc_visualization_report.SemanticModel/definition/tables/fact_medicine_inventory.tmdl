@@ -1,0 +1,226 @@
+table fact_medicine_inventory
+	lineageTag: 8001ccd2-15bb-4443-9171-07c23f11116e
+	sourceLineageTag: 181bec59-fcc2-47e2-a335-ee58de7a37f6
+
+	measure 'Medicine Risk Score' =
+			
+			AVERAGEX(
+			    fact_medicine_inventory,
+			    SWITCH(
+			        fact_medicine_inventory[stock_status],
+			        "In Stock", 0.0,
+			        "Low Stock", 0.4,
+			        "Critical", 0.75,
+			        "Stockout", 1,
+			        0
+			    )
+			)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: measures
+		lineageTag: a8f8a767-3aaf-45c6-b7e3-a8dfd9c20159
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column facility_id
+		dataType: string
+		lineageTag: 2c32b0ea-5e7b-4876-b2ad-e59615e07295
+		sourceLineageTag: 09fd286b-bb74-48d8-94d1-56d142c1c924
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: facility_id
+
+		annotation SummarizationSetBy = User
+
+	column medicine_id
+		dataType: string
+		lineageTag: 328104f8-b0a8-4d07-bfa3-b53e7ee903d2
+		sourceLineageTag: 4637cfcb-a7f4-4b6a-a3a1-9e7435cec439
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: medicine_id
+
+		annotation SummarizationSetBy = User
+
+	column medicine_name
+		dataType: string
+		lineageTag: 81125086-a59c-4c76-8e41-6f976a997848
+		sourceLineageTag: a3e1b5c4-fe2d-4d86-a043-17cb49996d19
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: medicine_name
+
+		annotation SummarizationSetBy = User
+
+	column medicine_category
+		dataType: string
+		lineageTag: de8af0be-055f-4ac1-8be8-442beb939081
+		sourceLineageTag: 5df21e11-8fe5-417c-b042-115df12d70cc
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: medicine_category
+
+		annotation SummarizationSetBy = User
+
+	column dosage_form
+		dataType: string
+		lineageTag: 271d405b-a63a-4ffe-8716-0ddc305f16d5
+		sourceLineageTag: a71e7bcc-96e9-45f4-90ea-29e406aaea4d
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: dosage_form
+
+		annotation SummarizationSetBy = User
+
+	column strength
+		dataType: string
+		lineageTag: 3e33b96f-f017-496a-a766-64344b75471f
+		sourceLineageTag: f2d52ae4-8df9-432c-aa05-cb2da31d6bea
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: strength
+
+		annotation SummarizationSetBy = User
+
+	column unit_of_measure
+		dataType: string
+		lineageTag: b51fd15e-00fd-4606-b8aa-be3a9af599b8
+		sourceLineageTag: 8ad69c34-7764-44f2-a19e-f4814cd4fa5e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: unit_of_measure
+
+		annotation SummarizationSetBy = User
+
+	column inventory_record_date
+		dataType: string
+		lineageTag: 9064878a-c26b-473b-9e5d-d5176cd3edc6
+		sourceLineageTag: 1b282ec7-9fcd-483e-afb6-66034f5cab05
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: inventory_record_date
+
+		annotation SummarizationSetBy = User
+
+	column stock_level
+		dataType: int64
+		formatString: 0
+		lineageTag: 51548316-85b2-4771-a75e-3873ab2350d8
+		sourceLineageTag: 1092294e-4d77-45d6-ba64-2fd5d0b89524
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: stock_level
+
+		annotation SummarizationSetBy = User
+
+	column minimum_stock_level
+		dataType: int64
+		formatString: 0
+		lineageTag: a9498c73-cae9-4dfd-b375-e78df4fd17cb
+		sourceLineageTag: d03103fe-a95d-4ab5-ae2f-86185bb33bf1
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: minimum_stock_level
+
+		annotation SummarizationSetBy = User
+
+	column maximum_stock_level
+		dataType: int64
+		formatString: 0
+		lineageTag: 534bc16b-7062-450d-b3e6-4e2521fc8474
+		sourceLineageTag: 62b67669-8591-44a4-b9e5-956d0c8559d0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: maximum_stock_level
+
+		annotation SummarizationSetBy = User
+
+	column average_monthly_consumption
+		dataType: int64
+		formatString: 0
+		lineageTag: 52394a84-71a8-44c5-8cd5-136ae0b2dc5b
+		sourceLineageTag: 1adf366b-0377-4793-be79-cc0320e4a725
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: average_monthly_consumption
+
+		annotation SummarizationSetBy = User
+
+	column days_of_stock_remaining
+		dataType: double
+		lineageTag: 6c3a3e4b-840b-4849-80cf-a73aa8c555b9
+		sourceLineageTag: caac07ba-aa28-4986-868d-06088f7c06e6
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: days_of_stock_remaining
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stock_status
+		dataType: string
+		lineageTag: 819c6d3c-2122-45e8-8d2f-8a168ca80092
+		sourceLineageTag: a0ec6aca-48d3-4889-8c22-2ac7a8ff70b5
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: stock_status
+
+		annotation SummarizationSetBy = User
+
+	column last_restock_date
+		dataType: string
+		lineageTag: feef9f46-3fd9-4dd4-9cf2-5a0f9b96ce6f
+		sourceLineageTag: 3145e353-3dc4-4595-9698-9163d247eb9a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: last_restock_date
+
+		annotation SummarizationSetBy = User
+
+	column quantity_last_restocked
+		dataType: int64
+		formatString: 0
+		lineageTag: 2475ce67-2df8-4753-926c-fe6d10baa704
+		sourceLineageTag: ba5eb90b-5545-4a15-9d2f-1a3796f6ecb7
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: quantity_last_restocked
+
+		annotation SummarizationSetBy = User
+
+	column supplier_type
+		dataType: string
+		lineageTag: b8a14077-3e28-43f4-8a5c-1bd4272dc28b
+		sourceLineageTag: ebfa37e8-6744-4b27-8745-0300fc4e539a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: supplier_type
+
+		annotation SummarizationSetBy = User
+
+	column batch_number
+		dataType: string
+		lineageTag: 89516891-30f2-4359-9ddd-1ce4dd46aa36
+		sourceLineageTag: 88c4dc32-f8c3-4988-a80b-d3be32509266
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: batch_number
+
+		annotation SummarizationSetBy = User
+
+	column expiry_date
+		dataType: string
+		lineageTag: 7a11b513-29ac-452f-bf4a-2571de3cf94b
+		sourceLineageTag: a7b1ba3c-820c-41f4-82ea-bff928a49cd3
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: expiry_date
+
+		annotation SummarizationSetBy = User
+
+	partition fact_medicine_inventory = entity
+		mode: directQuery
+		source
+			entityName: fact_medicine_inventory
+			expressionSource: 'DirectQuery to AS - phc_semantic_model'
+

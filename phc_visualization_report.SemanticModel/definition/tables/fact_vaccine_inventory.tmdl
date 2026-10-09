@@ -1,0 +1,253 @@
+table fact_vaccine_inventory
+	lineageTag: f5af55e4-6332-493c-ad8e-e8287daccca0
+	sourceLineageTag: 5d7c84a5-aaab-4a2e-85e5-5d54477a51b8
+
+	measure 'Vaccine Risk Score' =
+			
+			AVERAGEX(
+			    fact_vaccine_inventory,
+			    SWITCH(
+			        fact_vaccine_inventory[stock_status],
+			        "In Stock", 0.0,
+			        "Low Stock", 0.4,
+			        "Critical", 0.75,
+			        "Stockout", 1,
+			        0
+			    )
+			)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: measures
+		lineageTag: e6acb4aa-a7fc-4fb2-8c3e-2f383e299a39
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	column facility_id
+		dataType: string
+		lineageTag: a88c8fec-f25b-45df-bea4-b734d79bd52d
+		sourceLineageTag: 04464138-f16e-4ce4-8107-9b6d5d47e182
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: facility_id
+
+		annotation SummarizationSetBy = User
+
+	column vaccine_id
+		dataType: string
+		lineageTag: 6b479de7-c0a2-4cc1-9cf5-d61cf6e99910
+		sourceLineageTag: 54592066-fd6e-41ac-b9a2-9a40931caf7b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: vaccine_id
+
+		annotation SummarizationSetBy = User
+
+	column vaccine_name
+		dataType: string
+		lineageTag: 9701412e-a1c9-47d2-9196-8e3d6753e3ef
+		sourceLineageTag: 8d715afb-715d-4b4a-9390-c74917a23550
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: vaccine_name
+
+		annotation SummarizationSetBy = User
+
+	column vaccine_category
+		dataType: string
+		lineageTag: c1d08370-a687-4caa-8a71-7acd46896500
+		sourceLineageTag: c774c5e5-f2d9-4513-837b-d848a376cdf8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: vaccine_category
+
+		annotation SummarizationSetBy = User
+
+	column presentation
+		dataType: string
+		lineageTag: b2c4a4a8-d82f-409d-86fe-84473c0bbbb4
+		sourceLineageTag: d4b4e108-f2c5-4fa7-aa28-0b76accabec2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: presentation
+
+		annotation SummarizationSetBy = User
+
+	column dose_volume
+		dataType: string
+		lineageTag: cdd069f4-6795-4b3b-9d11-183c400369a4
+		sourceLineageTag: 16747dda-dd7b-42cf-bac7-7aa1b7b064fd
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: dose_volume
+
+		annotation SummarizationSetBy = User
+
+	column unit_of_measure
+		dataType: string
+		lineageTag: 472d92e0-4c27-4952-89d6-dcf9866a6c9b
+		sourceLineageTag: 3fad682a-469a-4f01-ab99-6af97b3f05fa
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: unit_of_measure
+
+		annotation SummarizationSetBy = User
+
+	column inventory_record_date
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 38d006b5-1a56-40b8-8f62-d32f58d2ce2e
+		sourceLineageTag: 17e74288-f97a-4809-92a3-1e9578ca7d97
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: inventory_record_date
+
+		annotation SummarizationSetBy = User
+
+	column stock_level
+		dataType: int64
+		formatString: 0
+		lineageTag: b0b35d30-3480-4ac5-a0e8-9834cebbc0a0
+		sourceLineageTag: 636c6ec2-6ec3-46b7-ba34-9646fb63f9b0
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: stock_level
+
+		annotation SummarizationSetBy = User
+
+	column minimum_stock_level
+		dataType: int64
+		formatString: 0
+		lineageTag: 4033de46-a1ab-40c5-adcc-06273f8f11a3
+		sourceLineageTag: 4957eb33-b0f0-4f38-aae4-c1b63be9c429
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: minimum_stock_level
+
+		annotation SummarizationSetBy = User
+
+	column maximum_stock_level
+		dataType: int64
+		formatString: 0
+		lineageTag: a797cbf3-661d-4ab3-9b62-ab36a1efee2c
+		sourceLineageTag: 674ed7d8-a69b-4bdd-b352-2b13a90591c8
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: maximum_stock_level
+
+		annotation SummarizationSetBy = User
+
+	column average_monthly_consumption
+		dataType: int64
+		formatString: 0
+		lineageTag: 327761c3-da30-4387-ae98-7d8d84111fbd
+		sourceLineageTag: 3880b922-7ccf-4119-a613-d11099a5059e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: average_monthly_consumption
+
+		annotation SummarizationSetBy = User
+
+	column days_of_stock_remaining
+		dataType: double
+		lineageTag: 59fdea3d-3605-4369-825b-1eb78dcd30cb
+		sourceLineageTag: 80c04bd7-6ace-453d-85cd-5e9469bf29cb
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: days_of_stock_remaining
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column stock_status
+		dataType: string
+		lineageTag: db1c3963-1166-43e4-b2a0-3c781ab7c722
+		sourceLineageTag: 14bb1990-1df6-487a-8747-6f4a7ae33f95
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: stock_status
+
+		annotation SummarizationSetBy = User
+
+	column last_restock_date
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 3031836c-faee-4193-8495-a892f7cbf363
+		sourceLineageTag: f03bc77e-4d56-416c-b433-54f48d328f0c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: last_restock_date
+
+		annotation SummarizationSetBy = User
+
+	column quantity_last_restocked
+		dataType: int64
+		formatString: 0
+		lineageTag: 238ed098-0f43-41d7-b918-b357e6f26351
+		sourceLineageTag: f0eeca95-f3d0-4f22-9435-a29ba917285f
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: quantity_last_restocked
+
+		annotation SummarizationSetBy = User
+
+	column batch_number
+		dataType: string
+		lineageTag: 05d2268e-32bf-481d-bb58-842a53579de9
+		sourceLineageTag: f9bc58ef-bf80-44ca-baad-81e1cd988e48
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: batch_number
+
+		annotation SummarizationSetBy = User
+
+	column expiry_date
+		dataType: dateTime
+		formatString: General Number
+		lineageTag: 383ab48b-5fd4-4717-9150-2e50ccc7829f
+		sourceLineageTag: e7696674-88c8-407d-86ed-a197a7ffa1bb
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: expiry_date
+
+		annotation SummarizationSetBy = User
+
+	column cold_chain_required
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 14889fc6-8624-412e-affc-eee12c69b628
+		sourceLineageTag: efbadf27-0d9d-4627-a961-31d5f84d83ac
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: cold_chain_required
+
+		annotation SummarizationSetBy = User
+
+	column cold_chain_uptime_pct
+		dataType: double
+		lineageTag: ebf62ccb-f6c3-45b6-a5e8-41d65c892fb9
+		sourceLineageTag: 950c1be5-60db-47ec-980f-9bebac0630cc
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: cold_chain_uptime_pct
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column temperature_excursion_count
+		dataType: int64
+		formatString: 0
+		lineageTag: 30e6166d-42d8-4760-aca3-a523a3b1cfeb
+		sourceLineageTag: afabc0d6-4ce4-457b-b7c7-7f2ca70d0afc
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: temperature_excursion_count
+
+		annotation SummarizationSetBy = User
+
+	partition fact_vaccine_inventory = entity
+		mode: directQuery
+		source
+			entityName: fact_vaccine_inventory
+			expressionSource: 'DirectQuery to AS - phc_semantic_model'
+

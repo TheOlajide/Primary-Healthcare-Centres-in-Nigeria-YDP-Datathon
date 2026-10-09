@@ -1,0 +1,272 @@
+cultureInfo en-US
+
+	linguisticMetadata =
+			{
+			  "Version": "2.0.0",
+			  "Language": "en-US",
+			  "Entities": {
+			    "fact_phc_facilities.medium_risk_phcs_count": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_phc_facilities",
+			          "ConceptualProperty": "Medium Risk PHCs Count"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Medium Risk PHCs": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fact_phc_facilities.total_facilities": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_phc_facilities",
+			          "ConceptualProperty": "total facilities"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Total Facilities": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fact_phc_facilities.low_risk_phcs_count": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_phc_facilities",
+			          "ConceptualProperty": "Low Risk PHCs Count"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Low Risk PHCs": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fact_phc_facilities.high_risk_phcs_count": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_phc_facilities",
+			          "ConceptualProperty": "High Risk PHCs Count"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "High Risk PHCs": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fact_phc_facilities.operational_status": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_phc_facilities",
+			          "ConceptualProperty": "operational_status"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Operational Status": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fact_phc_facilities.state_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_phc_facilities",
+			          "ConceptualProperty": "state_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "State": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fact_phc_facilities.percentage_of_phc_at_high_risk": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_phc_facilities",
+			          "ConceptualProperty": "Percentage of PHC at High Risk"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "PHCs at High Risk": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fact_phc_facilities.total_health_workers": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_phc_facilities",
+			          "ConceptualProperty": "total health workers"
+			        }
+			      },
+			      "State": "Generated"
+			    },
+			    "fact_phc_facilities.overall_staffing_adequacy": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_phc_facilities",
+			          "ConceptualProperty": "Overall Staffing Adequacy"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Staffing Adequacy": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fact_phc_facilities.percentage_of_phc_at_medium_risk": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_phc_facilities",
+			          "ConceptualProperty": "Percentage of PHC at Medium Risk"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "PHC at Medium Risk": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fact_phc_facilities.overall_phc_risk_score": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_phc_facilities",
+			          "ConceptualProperty": "Overall PHC Risk Score"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Risk Score": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fact_phc_facilities.facility_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_phc_facilities",
+			          "ConceptualProperty": "facility_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Facility": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fact_phc_facilities.lga_name": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_phc_facilities",
+			          "ConceptualProperty": "lga_name"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Lga": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    }
+			  }
+			}
+		contentType: json
+

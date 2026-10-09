@@ -1,0 +1,588 @@
+table fact_phc_facilities
+	lineageTag: 5a1c60cc-ea3f-49ce-9215-13b430c97765
+	sourceLineageTag: 1c019fe5-efe4-4906-9cbc-4a051f1ed220
+
+	measure 'total health workers' = SUM(fact_phc_facilities[total_health_workers])
+		formatString: #,0
+		displayFolder: measures
+		lineageTag: ea3330ac-6075-4ed6-a3c9-229c4516296b
+
+		changedProperty = FormatString
+
+	measure 'total facilities' = DISTINCTCOUNT(fact_facility_services[facility_id])
+		formatString: #,0
+		displayFolder: measures
+		lineageTag: 11292511-3423-4d93-8e88-a22f8f09916d
+
+		changedProperty = FormatString
+
+	measure 'catchment population' = SUM(fact_phc_facilities[catchment_population])
+		formatString: #,0
+		displayFolder: measures
+		lineageTag: 02143341-badf-4d78-a405-431f7bf365c7
+
+		changedProperty = FormatString
+
+	measure 'Number of Beds' = sum(fact_phc_facilities[number_of_beds])
+		formatString: 0
+		displayFolder: measures
+		lineageTag: 8173c8a7-8774-4eb8-a3c9-4bbba160116a
+
+	measure 'Doctor Adequacy' =
+			
+			MIN(
+			    DIVIDE(
+			        SUM(fact_phc_facilities[doctors]),
+			        DISTINCTCOUNT(fact_phc_facilities[facility_id]) * 1,
+			        0
+			    ),
+			    1
+			)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: measures
+		lineageTag: e591ddd4-1e41-4084-95b4-9269989791c7
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Nurse Adequacy' =
+			
+			MIN(
+			    DIVIDE(
+			        SUM(fact_phc_facilities[nurses]),
+			        DISTINCTCOUNT(fact_phc_facilities[facility_id]) * 3,
+			        0
+			    ),
+			    1
+			)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: measures
+		lineageTag: d1b6358a-2af4-4992-adb9-12a73b38165b
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Midwife Adequacy' =
+			
+			MIN(
+			    DIVIDE(
+			        SUM(fact_phc_facilities[midwives]),
+			        DISTINCTCOUNT(fact_phc_facilities[facility_id]) * 2,
+			        0
+			    ),
+			    1
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: measures
+		lineageTag: 95f7ce8a-298b-4331-9d92-c5b7d1ec244e
+
+		changedProperty = FormatString
+
+	measure 'CHW Adequacy' =
+			
+			MIN(
+			    DIVIDE(
+			        SUM(fact_phc_facilities[community_health_workers]),
+			        DISTINCTCOUNT(fact_phc_facilities[facility_id]) * 2,
+			        0
+			    ),
+			    1
+			)
+		displayFolder: measures
+		lineageTag: d357afb9-ec39-40e8-822e-ff3b9aed1cb6
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Pharmacist Adequacy' =
+			
+			MIN(
+			    DIVIDE(
+			        SUM(fact_phc_facilities[pharmacists]),
+			        DISTINCTCOUNT(fact_phc_facilities[facility_id]) * 1,
+			        0
+			    ),
+			    1
+			)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: measures
+		lineageTag: 963f9057-3aba-42d7-9ce1-34bc99415ae7
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Overall Staffing Adequacy' =
+			
+			AVERAGEX(
+			    {
+			        [Doctor Adequacy],
+			        [Nurse Adequacy],
+			        [Midwife Adequacy],
+			        [CHW Adequacy],
+			        [Pharmacist Adequacy],
+			        [Laboratory Adequacy]
+			    },
+			    [Value]
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: measures
+		lineageTag: 1bb17c11-4424-4408-9ade-97f50c3d933e
+
+		changedProperty = FormatString
+
+	measure 'Laboratory Adequacy' =
+			
+			MIN(
+			    DIVIDE(
+			        SUM(fact_phc_facilities[laboratory_staff]),
+			        DISTINCTCOUNT(fact_phc_facilities[facility_id]) * 1,
+			        0
+			    ),
+			    1
+			)
+		formatString: 0.00\ %;-0.00\ %;0.00\ %
+		displayFolder: measures
+		lineageTag: 900128b5-b122-4984-b0fd-824e637cb771
+
+		annotation PBI_FormatHint = {"isCustom":true}
+
+	measure 'Staffing Risk Score' =
+			1-
+			[Overall Staffing Adequacy]
+		formatString: 0.00000%;-0.00000%;0.00000%
+		displayFolder: measures
+		lineageTag: 1a3306a6-755d-44e8-a842-80432b8075ad
+
+		changedProperty = FormatString
+
+	measure 'Overall PHC Risk Score' =
+			
+			(
+			    [Medicine Risk Score] * 0.30
+			)
+			+
+			(
+			    [Vaccine Risk Score] * 0.20
+			)
+			+
+			(
+			    [Staffing Risk Score] * 0.25
+			)
+			+
+			(
+			    [Service Risk Score] * 0.25
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: measures
+		lineageTag: fe6a19c7-6ae1-4c86-8b0a-60d9e3334061
+
+		changedProperty = FormatString
+
+	measure 'PHC Risk Level' =
+			
+			SWITCH(
+			    TRUE(),
+			    [Overall PHC Risk Score] >= 0.7, "High Risk",
+			    [Overall PHC Risk Score] >= 0.4, "Medium Risk",
+			    "Low Risk"
+			)
+		displayFolder: measures
+		lineageTag: 24e189fe-20c2-40c4-b9b5-ab72d6761e30
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'High Risk PHCs Count' =
+			
+			COUNTROWS(
+			    FILTER(
+			        VALUES(fact_phc_facilities[facility_id]),
+			        [Overall PHC Risk Score] >= 0.7
+			    )
+			)
+		displayFolder: measures
+		lineageTag: e0269456-e68e-41b6-b174-92259f161cd1
+
+		changedProperty = FormatString
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Medium Risk PHCs Count' =
+			
+			COUNTROWS(
+			    FILTER(
+			        VALUES(fact_phc_facilities[facility_id]),
+			        [Overall PHC Risk Score] >= 0.4
+			            && [Overall PHC Risk Score] < 0.7
+			    )
+			)
+		formatString: #,0.00
+		displayFolder: measures
+		lineageTag: e1140ccb-af58-4acb-9780-6d71ba755210
+
+		changedProperty = FormatString
+
+	measure 'Low Risk PHCs Count' =
+			
+			COUNTROWS(
+			    FILTER(
+			        VALUES(fact_phc_facilities[facility_id]),
+			        [Overall PHC Risk Score] < 0.4
+			    )
+			)
+		displayFolder: measures
+		lineageTag: b8a0ab78-0970-44c2-a078-ecf8b1b4a56d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Percentage of PHC at High Risk' =
+			
+			DIVIDE(
+			    [High Risk PHCs Count],
+			    DISTINCTCOUNT(fact_phc_facilities[facility_id]),
+			    0
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: measures
+		lineageTag: 2442c0a0-ac51-4ba4-8a6b-fc44ccb1142b
+
+		changedProperty = DisplayFolder
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'Percentage of PHC at Medium Risk' =
+			
+			DIVIDE(
+			    [Medium Risk PHCs Count],
+			    DISTINCTCOUNT(fact_phc_facilities[facility_id]),
+			    0
+			)
+		formatString: 0.00%;-0.00%;0.00%
+		displayFolder: measures
+		lineageTag: 0d2c6b8e-7639-4003-8fb0-925766d01eb5
+
+		changedProperty = DisplayFolder
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	column facility_id
+		dataType: string
+		isNullable: false
+		lineageTag: 7e20dcd0-6d20-4de8-96b7-58739dc8042d
+		sourceLineageTag: dc6105f8-310d-4a37-b250-ce2522559734
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: facility_id
+
+		annotation SummarizationSetBy = User
+
+	column facility_name
+		dataType: string
+		lineageTag: 33c1c8dd-0f09-479f-abe8-a3f16bc128f1
+		sourceLineageTag: ae019e22-9da5-4808-a818-0b8a46d5d30e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: facility_name
+
+		annotation SummarizationSetBy = User
+
+	column state_code
+		dataType: string
+		lineageTag: bf9884e4-db48-4dd0-ba22-37b3f2f186b3
+		sourceLineageTag: 3547a61b-adff-4955-8eca-16f8bc9cfe4f
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: state_code
+
+		annotation SummarizationSetBy = User
+
+	column state_name
+		dataType: string
+		lineageTag: aef5fc6b-2880-4bb2-a100-936d9c49eebf
+		sourceLineageTag: 4798b1af-d34b-4111-8e33-eaedf13b3727
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: state_name
+
+		annotation SummarizationSetBy = User
+
+	column lga_code
+		dataType: string
+		lineageTag: a9c6aad3-2c8b-4516-b306-d09b78a82a5d
+		sourceLineageTag: fcf4c940-6883-4fe0-a6a1-50eddeb2296a
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: lga_code
+
+		annotation SummarizationSetBy = User
+
+	column lga_name
+		dataType: string
+		lineageTag: 9b2f8e16-f205-444b-bd09-8abb3f8803f8
+		sourceLineageTag: 138b84a7-e6cf-41ce-9dc0-8d6452f32fea
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: lga_name
+
+		annotation SummarizationSetBy = User
+
+	column latitude
+		dataType: double
+		lineageTag: 31009a46-4100-4dfe-8497-6e6beb8f0549
+		sourceLineageTag: 0d00e596-d4ab-4b3a-a30f-a2744e869cf9
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: latitude
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column longitude
+		dataType: double
+		lineageTag: fde1d36d-2704-401c-976e-cfc71ca40b5e
+		sourceLineageTag: 890d9553-6b29-4cd3-8bc2-92328316b777
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: longitude
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column facility_type
+		dataType: string
+		lineageTag: 3c3b3413-7698-419e-9fe4-0b6a02e362f9
+		sourceLineageTag: 0ec6f6cb-5272-4de8-ae08-bcf118fa53f8
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: facility_type
+
+		annotation SummarizationSetBy = User
+
+	column ownership
+		dataType: string
+		lineageTag: 1399960f-d2c2-49b0-9702-8df96b2de3b4
+		sourceLineageTag: 8dc7d07e-f219-48d0-b1ab-86d1205a8075
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: ownership
+
+		annotation SummarizationSetBy = User
+
+	column urban_rural_class
+		dataType: string
+		lineageTag: 62c29ce2-2f5d-4964-91a6-eaacb6f2e033
+		sourceLineageTag: 3ebaa156-1022-479c-871e-696ffdf5d41e
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: urban_rural_class
+
+		annotation SummarizationSetBy = User
+
+	column catchment_population
+		dataType: int64
+		formatString: #,0
+		lineageTag: 33899015-6ef4-46f6-8d57-f224daeecc22
+		sourceLineageTag: b358609a-f777-436e-ba64-323dcf853b29
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: catchment_population
+
+		changedProperty = FormatString
+
+		annotation SummarizationSetBy = User
+
+	column operational_status
+		dataType: string
+		lineageTag: 5426a5b9-55e8-43b6-ad04-292de18faee4
+		sourceLineageTag: 9cb533f3-cf70-404c-9e00-c327e9a1884c
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: operational_status
+
+		annotation SummarizationSetBy = User
+
+	column number_of_beds
+		dataType: int64
+		formatString: 0
+		lineageTag: 98f3db34-07c8-4005-85e9-05718145ccfb
+		sourceLineageTag: 8191cd7b-a0ba-4f4e-8e4d-b619399190d2
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: number_of_beds
+
+		annotation SummarizationSetBy = User
+
+	column total_health_workers
+		dataType: int64
+		formatString: 0
+		lineageTag: 5691f5bb-72c5-40ec-bc7f-a9c1397d8a26
+		sourceLineageTag: 6afc5137-246c-4986-b3d2-4e1c96c91505
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: total_health_workers
+
+		annotation SummarizationSetBy = User
+
+	column doctors
+		dataType: int64
+		formatString: 0
+		lineageTag: 4ce2995c-588e-40d8-9161-6406901a742d
+		sourceLineageTag: bd1ac7a7-a7aa-48cb-ad36-00e488c920f1
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: doctors
+
+		annotation SummarizationSetBy = User
+
+	column nurses
+		dataType: int64
+		formatString: 0
+		lineageTag: 8cc9588f-ffe1-44ff-88fe-16d167774ab9
+		sourceLineageTag: 4c76afd8-9d1d-4691-9545-c3b11bd55b57
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: nurses
+
+		annotation SummarizationSetBy = User
+
+	column midwives
+		dataType: int64
+		formatString: 0
+		lineageTag: b6a56c86-0b32-4b9c-a030-ca57d254c1c2
+		sourceLineageTag: 54fb7f04-f9cc-427e-bf90-7760699bab43
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: midwives
+
+		annotation SummarizationSetBy = User
+
+	column community_health_workers
+		dataType: int64
+		formatString: 0
+		lineageTag: f7c1c8b7-168a-4b30-858e-b6799d2fe933
+		sourceLineageTag: 2b9a0e57-f084-49c7-a421-341f10fd18a1
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: community_health_workers
+
+		annotation SummarizationSetBy = User
+
+	column pharmacists
+		dataType: int64
+		formatString: 0
+		lineageTag: f2728b24-07d1-46cb-a845-9e62e7e44ab6
+		sourceLineageTag: 5209994f-a9a4-4026-9dd0-7cfcf8042fde
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: pharmacists
+
+		annotation SummarizationSetBy = User
+
+	column laboratory_staff
+		dataType: int64
+		formatString: 0
+		lineageTag: 9d8a1465-3c94-40e0-8d70-0abec35ad61e
+		sourceLineageTag: 718b5d92-8248-4b8b-bc64-4792a6096e8a
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: laboratory_staff
+
+		annotation SummarizationSetBy = User
+
+	column other_health_workers
+		dataType: int64
+		formatString: 0
+		lineageTag: 1f4ff7c0-5772-485b-bf29-972b8c3a61a0
+		sourceLineageTag: 13fe8f1f-dab9-42b0-a55a-835a8ffaef6e
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: other_health_workers
+
+		annotation SummarizationSetBy = User
+
+	column has_electricity
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: fae88f30-f23d-4eee-b037-f094434cfd9f
+		sourceLineageTag: 5d02f140-9ab2-464a-97f3-982879669287
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: has_electricity
+
+		annotation SummarizationSetBy = User
+
+	column has_water
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 49d030ec-bdfc-4da2-b69b-2fdf0636109d
+		sourceLineageTag: 0b58cf4e-6b22-4f27-893a-9b62ce020460
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: has_water
+
+		annotation SummarizationSetBy = User
+
+	column has_refrigerator
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: a9deef3f-3fcc-4086-a71f-24d61126d2e2
+		sourceLineageTag: 989803f7-0b2b-4fc5-97ac-1fbca3644f6b
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: has_refrigerator
+
+		annotation SummarizationSetBy = User
+
+	column has_cold_chain
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 638d5b9e-7757-42a6-a357-1325ea82e937
+		sourceLineageTag: e4638c2a-0a7a-4957-bfc0-c555fe2d1f06
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: has_cold_chain
+
+		annotation SummarizationSetBy = User
+
+	column has_storage_room
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 529eedf2-1f33-4655-95af-2f11e1d6ef21
+		sourceLineageTag: 389b5d8d-3c1b-4b89-89ce-8369fb04a4a2
+		dataCategory: Uncategorized
+		summarizeBy: none
+		sourceColumn: has_storage_room
+
+		annotation SummarizationSetBy = User
+
+	column distance_to_lga_hq_km
+		dataType: double
+		lineageTag: 66062a21-b0db-42ef-bf2f-3024c7c5990e
+		sourceLineageTag: 6ca59628-13b7-4026-b2b4-5084d4f1da37
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: distance_to_lga_hq_km
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column distance_to_major_road_km
+		dataType: double
+		lineageTag: aca79fbb-d0fd-4fa5-b402-fca68ba38f69
+		sourceLineageTag: 5e036196-f2b1-4d8e-9abc-7d315cb41ff8
+		dataCategory: Uncategorized
+		summarizeBy: sum
+		sourceColumn: distance_to_major_road_km
+
+		annotation SummarizationSetBy = User
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition fact_phc_facilities = entity
+		mode: directQuery
+		source
+			entityName: fact_phc_facilities
+			expressionSource: 'DirectQuery to AS - phc_semantic_model'
+

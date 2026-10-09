@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "Report",
+    "displayName": "phc_visualization_report"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "b654d29f-9684-a9e7-4613-f5244f0a08cb"
+  }
+}
