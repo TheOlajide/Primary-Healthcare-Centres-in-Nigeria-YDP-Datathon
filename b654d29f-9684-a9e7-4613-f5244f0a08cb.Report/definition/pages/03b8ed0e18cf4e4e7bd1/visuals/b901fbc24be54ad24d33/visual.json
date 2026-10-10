@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
-  "name": "959e2ecc56cac5510878",
+  "name": "b901fbc24be54ad24d33",
   "position": {
-    "x": 1376.3865533254141,
-    "y": 146.03125626745245,
-    "z": 8000,
-    "height": 114.13937271479043,
-    "width": 285.34843178697605,
-    "tabOrder": 8000
+    "x": 467.04373704794415,
+    "y": 122.05861730472586,
+    "z": 12002,
+    "height": 94.934480125897878,
+    "width": 291.58447467240063,
+    "tabOrder": 12002
   },
   "visual": {
     "visualType": "cardVisual",
@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "fact_medicine_inventory"
+                      "Entity": "fact_phc_facilities"
                     }
                   },
-                  "Property": "Medicine Risk Score"
+                  "Property": "Staffing Risk Score"
                 }
               },
-              "queryRef": "fact_medicine_inventory.Medicine Risk Score",
-              "nativeQueryRef": "Medicine Risk Score"
+              "queryRef": "fact_phc_facilities.Staffing Risk Score",
+              "nativeQueryRef": "Staffing Risk Score"
             }
           ]
         }
@@ -39,10 +39,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "fact_medicine_inventory"
+                    "Entity": "fact_phc_facilities"
                   }
                 },
-                "Property": "Medicine Risk Score"
+                "Property": "Staffing Risk Score"
               }
             },
             "direction": "Descending"
@@ -140,6 +140,20 @@
           "selector": {
             "metadata": "fact_phc_facilities.population"
           }
+        },
+        {
+          "properties": {
+            "labelPrecision": {
+              "expr": {
+                "Literal": {
+                  "Value": "2L"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "fact_phc_facilities.Staffing Risk Score"
+          }
         }
       ],
       "label": [
@@ -148,7 +162,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "16D"
+                  "Value": "8D"
                 }
               }
             },
@@ -216,6 +230,20 @@
           },
           "selector": {
             "metadata": "fact_phc_facilities.population"
+          }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "fact_phc_facilities.Staffing Risk Score"
           }
         }
       ],

@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
-  "name": "0927be2521a8eec94ca6",
+  "name": "da0b7c210dcc31d3c865",
   "position": {
-    "x": 447.44684006849775,
-    "y": 121.76422205142727,
-    "z": 7000,
-    "height": 104.15975621266669,
-    "width": 262.59994876151183,
-    "tabOrder": 7000
+    "x": 776.42842674395069,
+    "y": 122.05861730472586,
+    "z": 11000,
+    "height": 96.629738699574631,
+    "width": 281.41292323034014,
+    "tabOrder": 11000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -20,15 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "fact_phc_facilities"
+                      "Entity": "dim_facility_services"
                     }
                   },
-                  "Property": "Medium Risk PHCs Count"
+                  "Property": "Service Risk Score"
                 }
               },
-              "queryRef": "fact_phc_facilities.Medium Risk PHCs Count",
-              "nativeQueryRef": "Medium Risk PHCs",
-              "displayName": "Medium Risk PHCs"
+              "queryRef": "fact_facility_services.Service Risk Score",
+              "nativeQueryRef": "Service Risk Score"
             }
           ]
         }
@@ -40,10 +39,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "fact_phc_facilities"
+                    "Entity": "dim_facility_services"
                   }
                 },
-                "Property": "Medium Risk PHCs Count"
+                "Property": "Service Risk Score"
               }
             },
             "direction": "Descending"
@@ -66,7 +65,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "16D"
                 }
               }
             }
@@ -91,14 +90,14 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "16D"
+                  "Value": "9D"
                 }
               }
             },
             "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
+                  "Value": "1000D"
                 }
               }
             },
@@ -116,17 +115,17 @@
         },
         {
           "properties": {
-            "fontSize": {
+            "horizontalAlignment": {
               "expr": {
                 "Literal": {
-                  "Value": "16D"
+                  "Value": "'left'"
                 }
               }
             },
             "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
+                  "Value": "1000000D"
                 }
               }
             },
@@ -139,35 +138,7 @@
             }
           },
           "selector": {
-            "metadata": "fact_phc_facilities.High Risk PHCs Count"
-          }
-        },
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "16D"
-                }
-              }
-            },
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            },
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "0L"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "fact_phc_facilities.Medium Risk PHCs Count"
+            "metadata": "fact_phc_facilities.population"
           }
         }
       ],
@@ -177,7 +148,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "16D"
                 }
               }
             },
@@ -192,6 +163,27 @@
                   }
                 }
               }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'aboveValue'"
+                }
+              }
+            },
+            "textWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "matchValueAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           },
           "selector": {
@@ -203,7 +195,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "16D"
+                  "Value": "9D"
                 }
               }
             }
@@ -217,27 +209,13 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "16D"
+                  "Value": "10D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "fact_phc_facilities.High Risk PHCs Count"
-          }
-        },
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "16D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "fact_phc_facilities.Medium Risk PHCs Count"
+            "metadata": "fact_phc_facilities.population"
           }
         }
       ],
@@ -254,16 +232,19 @@
           }
         }
       ],
-      "fillCustom": [
+      "spacing": [
         {
           "properties": {
-            "show": {
+            "verticalSpacing": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "2L"
                 }
               }
             }
+          },
+          "selector": {
+            "id": "default"
           }
         }
       ]
@@ -302,14 +283,14 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "30D"
+                  "Value": "0D"
                 }
               }
             }

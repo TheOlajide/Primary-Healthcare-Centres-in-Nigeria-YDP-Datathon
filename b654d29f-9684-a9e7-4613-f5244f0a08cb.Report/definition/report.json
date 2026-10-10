@@ -46,6 +46,9 @@
       }
     ]
   },
+  "publicCustomVisuals": [
+    "ActivityGaugeA96234ADB8D143D1837fdfsFECd426BB34781"
+  ],
   "resourcePackages": [
     {
       "name": "SharedResources",

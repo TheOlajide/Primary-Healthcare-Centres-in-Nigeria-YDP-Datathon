@@ -11,11 +11,11 @@ annotation __PBI_TimeIntelligenceEnabled = 1
 
 annotation PBI_QueryOrder = ["DirectQuery to AS - phc_semantic_model","Risk Categories"]
 
-ref table fact_facility_services
-ref table fact_medicine_inventory
+ref table dim_facility_services
+ref table dim_medicine_inventory
 ref table fact_phc_facilities
-ref table fact_staffing
-ref table fact_vaccine_inventory
+ref table dim_staffing
+ref table dim_vaccine_inventory
 ref table 'Risk Categories'
 
 ref cultureInfo en-US

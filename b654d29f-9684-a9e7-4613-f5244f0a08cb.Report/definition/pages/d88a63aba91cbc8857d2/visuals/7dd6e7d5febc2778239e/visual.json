@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "7dd6e7d5febc2778239e",
   "position": {
-    "x": 457.39675095265284,
-    "y": 146.03125626745245,
+    "x": 1378.2452203991961,
+    "y": 145.79223733620032,
     "z": 7000,
     "height": 114.13937271479043,
     "width": 303.81215384378038,
@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "fact_vaccine_inventory"
+                      "Entity": "fact_phc_facilities"
                     }
                   },
-                  "Property": "Vaccine Risk Score"
+                  "Property": "Facilities With Storage Room"
                 }
               },
-              "queryRef": "fact_vaccine_inventory.Vaccine Risk Score",
-              "nativeQueryRef": "Vaccine Risk Score"
+              "queryRef": "fact_phc_facilities.Facilities With Storage Room",
+              "nativeQueryRef": "Facilities With Storage Room"
             }
           ]
         }
@@ -39,10 +39,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "fact_vaccine_inventory"
+                    "Entity": "fact_phc_facilities"
                   }
                 },
-                "Property": "Vaccine Risk Score"
+                "Property": "Facilities With Storage Room"
               }
             },
             "direction": "Descending"
@@ -65,7 +65,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "13D"
                 }
               }
             }
@@ -90,14 +90,14 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "16D"
+                  "Value": "9D"
                 }
               }
             },
             "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
+                  "Value": "1000D"
                 }
               }
             },
@@ -138,7 +138,7 @@
             }
           },
           "selector": {
-            "metadata": "fact_phc_facilities.High Risk PHCs Count"
+            "metadata": "fact_phc_facilities.# of facilities"
           }
         },
         {
@@ -149,10 +149,17 @@
                   "Value": "16D"
                 }
               }
+            },
+            "labelDisplayUnits": {
+              "expr": {
+                "Literal": {
+                  "Value": "1D"
+                }
+              }
             }
           },
           "selector": {
-            "metadata": "fact_vaccine_inventory.Vaccine Risk Score"
+            "metadata": "fact_phc_facilities.Facilities With Storage Room"
           }
         }
       ],
@@ -162,7 +169,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "10D"
                 }
               }
             },
@@ -188,7 +195,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "16D"
+                  "Value": "9D"
                 }
               }
             }
@@ -208,7 +215,7 @@
             }
           },
           "selector": {
-            "metadata": "fact_phc_facilities.High Risk PHCs Count"
+            "metadata": "fact_phc_facilities.# of facilities"
           }
         },
         {
@@ -222,7 +229,7 @@
             }
           },
           "selector": {
-            "metadata": "fact_vaccine_inventory.Vaccine Risk Score"
+            "metadata": "fact_phc_facilities.Facilities With Storage Room"
           }
         }
       ],
@@ -249,6 +256,44 @@
                 }
               }
             }
+          }
+        },
+        {
+          "properties": {
+            "fillColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "fact_phc_facilities.# of facilities"
+          }
+        },
+        {
+          "properties": {
+            "fillColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 0,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "selector": {
+            "id": "default"
           }
         }
       ]
@@ -288,6 +333,17 @@
               "expr": {
                 "Literal": {
                   "Value": "true"
+                }
+              }
+            },
+            "color": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "Literal": {
+                      "Value": "'#FFFFFF'"
+                    }
+                  }
                 }
               }
             },

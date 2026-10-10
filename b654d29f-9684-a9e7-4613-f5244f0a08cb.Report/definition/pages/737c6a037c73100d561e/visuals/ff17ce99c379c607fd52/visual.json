@@ -40,7 +40,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "fact_facility_services"
+                      "Entity": "dim_facility_services"
                     }
                   },
                   "Property": "Service Risk Score"
@@ -59,7 +59,7 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "fact_facility_services"
+                    "Entity": "dim_facility_services"
                   }
                 },
                 "Property": "Service Risk Score"

@@ -20,7 +20,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "fact_vaccine_inventory"
+                      "Entity": "dim_vaccine_inventory"
                     }
                   },
                   "Property": "Vaccine Risk Score"
@@ -39,7 +39,7 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "fact_vaccine_inventory"
+                    "Entity": "dim_vaccine_inventory"
                   }
                 },
                 "Property": "Vaccine Risk Score"

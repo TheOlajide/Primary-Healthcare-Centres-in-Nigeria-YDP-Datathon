@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
-  "name": "9fac8e25437cb3f42cba",
+  "name": "ad94062b1974470bdea0",
   "position": {
-    "x": 730.58533230856358,
-    "y": 121.76422205142727,
-    "z": 8000,
-    "height": 104.15975621266669,
-    "width": 262.59994876151183,
-    "tabOrder": 8000
+    "x": 1075.6415649978967,
+    "y": 122.05861730472586,
+    "z": 10000,
+    "height": 96.629738699574631,
+    "width": 284.80344037769368,
+    "tabOrder": 10000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -20,15 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "fact_phc_facilities"
+                      "Entity": "dim_medicine_inventory"
                     }
                   },
-                  "Property": "Low Risk PHCs Count"
+                  "Property": "Medicine Risk Score"
                 }
               },
-              "queryRef": "fact_phc_facilities.Low Risk PHCs Count",
-              "nativeQueryRef": "Low Risk PHCs",
-              "displayName": "Low Risk PHCs"
+              "queryRef": "fact_medicine_inventory.Medicine Risk Score",
+              "nativeQueryRef": "Medicine Risk Score"
             }
           ]
         }
@@ -40,10 +39,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "fact_phc_facilities"
+                    "Entity": "dim_medicine_inventory"
                   }
                 },
-                "Property": "Low Risk PHCs Count"
+                "Property": "Medicine Risk Score"
               }
             },
             "direction": "Descending"
@@ -91,14 +90,14 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "16D"
+                  "Value": "9D"
                 }
               }
             },
             "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
+                  "Value": "1000D"
                 }
               }
             },
@@ -116,10 +115,17 @@
         },
         {
           "properties": {
+            "horizontalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            },
             "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
+                  "Value": "1000000D"
                 }
               }
             },
@@ -132,7 +138,7 @@
             }
           },
           "selector": {
-            "metadata": "fact_phc_facilities.Low Risk PHCs Count"
+            "metadata": "fact_phc_facilities.population"
           }
         }
       ],
@@ -157,6 +163,27 @@
                   }
                 }
               }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'aboveValue'"
+                }
+              }
+            },
+            "textWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "matchValueAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           },
           "selector": {
@@ -168,13 +195,27 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "16D"
+                  "Value": "9D"
                 }
               }
             }
           },
           "selector": {
             "metadata": "fact_phc_facilities.total_doctors"
+          }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "10D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "fact_phc_facilities.population"
           }
         }
       ],
@@ -191,16 +232,19 @@
           }
         }
       ],
-      "fillCustom": [
+      "spacing": [
         {
           "properties": {
-            "show": {
+            "verticalSpacing": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "2L"
                 }
               }
             }
+          },
+          "selector": {
+            "id": "default"
           }
         }
       ]
@@ -239,14 +283,14 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "30D"
+                  "Value": "0D"
                 }
               }
             }

@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
-  "name": "c09f3adde3b26813855f",
+  "name": "306b71132d575b22f702",
   "position": {
-    "x": 464.95009179407276,
-    "y": 135.96013514555918,
-    "z": 14000,
-    "height": 114.13937271479043,
-    "width": 281.99139141301163,
-    "tabOrder": 14000
+    "x": 1378.2452203991963,
+    "y": 118.66810015737235,
+    "z": 9000,
+    "height": 98.324997273251384,
+    "width": 303.45128468813789,
+    "tabOrder": 9000
   },
   "visual": {
     "visualType": "cardVisual",
@@ -20,14 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "fact_phc_facilities"
+                      "Entity": "dim_vaccine_inventory"
                     }
                   },
-                  "Property": "Staffing Risk Score"
+                  "Property": "Vaccine Risk Score"
                 }
               },
-              "queryRef": "fact_phc_facilities.Staffing Risk Score",
-              "nativeQueryRef": "Staffing Risk Score"
+              "queryRef": "fact_vaccine_inventory.Vaccine Risk Score",
+              "nativeQueryRef": "Vaccine Risk Score"
             }
           ]
         }
@@ -39,10 +39,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "fact_phc_facilities"
+                    "Entity": "dim_vaccine_inventory"
                   }
                 },
-                "Property": "Staffing Risk Score"
+                "Property": "Vaccine Risk Score"
               }
             },
             "direction": "Descending"
@@ -65,7 +65,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "16D"
+                  "Value": "10D"
                 }
               }
             }
@@ -90,14 +90,14 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "9D"
+                  "Value": "16D"
                 }
               }
             },
             "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "1000D"
+                  "Value": "1D"
                 }
               }
             },
@@ -115,17 +115,17 @@
         },
         {
           "properties": {
-            "horizontalAlignment": {
+            "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "'left'"
+                  "Value": "16D"
                 }
               }
             },
             "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "1000000D"
+                  "Value": "1D"
                 }
               }
             },
@@ -138,7 +138,21 @@
             }
           },
           "selector": {
-            "metadata": "fact_phc_facilities.population"
+            "metadata": "fact_phc_facilities.High Risk PHCs Count"
+          }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "fact_vaccine_inventory.Vaccine Risk Score"
           }
         }
       ],
@@ -148,7 +162,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "8D"
+                  "Value": "13D"
                 }
               }
             },
@@ -163,59 +177,10 @@
                   }
                 }
               }
-            },
-            "position": {
-              "expr": {
-                "Literal": {
-                  "Value": "'aboveValue'"
-                }
-              }
-            },
-            "textWrap": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
-            },
-            "matchValueAlignment": {
-              "expr": {
-                "Literal": {
-                  "Value": "true"
-                }
-              }
             }
           },
           "selector": {
             "id": "default"
-          }
-        },
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "9D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "fact_phc_facilities.total_doctors"
-          }
-        },
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "10D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "fact_phc_facilities.population"
           }
         },
         {
@@ -229,7 +194,35 @@
             }
           },
           "selector": {
-            "metadata": "fact_phc_facilities.Staffing Risk Score"
+            "metadata": "fact_phc_facilities.total_doctors"
+          }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "fact_phc_facilities.High Risk PHCs Count"
+          }
+        },
+        {
+          "properties": {
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            }
+          },
+          "selector": {
+            "metadata": "fact_vaccine_inventory.Vaccine Risk Score"
           }
         }
       ],
@@ -246,19 +239,16 @@
           }
         }
       ],
-      "spacing": [
+      "fillCustom": [
         {
           "properties": {
-            "verticalSpacing": {
+            "show": {
               "expr": {
                 "Literal": {
-                  "Value": "2L"
+                  "Value": "true"
                 }
               }
             }
-          },
-          "selector": {
-            "id": "default"
           }
         }
       ]
@@ -297,14 +287,14 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "false"
+                  "Value": "true"
                 }
               }
             },
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "0D"
+                  "Value": "30D"
                 }
               }
             }

@@ -1,26 +1,30 @@
-table fact_facility_services
+table dim_facility_services
 	lineageTag: c16cc280-5f91-4941-9e39-ca09be7a8eda
 	sourceLineageTag: 6b9e078a-8c4a-4273-9995-14873fc2a0c5
 
 	measure 'Service Readiness Score' =
 			
 			DIVIDE(
-			    AVERAGE(fact_facility_services[service_readiness_score]),100
+			    AVERAGE(dim_facility_services[service_readiness_score]),100
 			)
 		formatString: 0.00%;-0.00%;0.00%
-		displayFolder: measures
+		displayFolder: _measures
 		lineageTag: b66b1ec8-1caf-4f61-8426-9bc78bbe423b
 
 		changedProperty = FormatString
+
+		changedProperty = DisplayFolder
 
 	measure 'Service Risk Score' =
 			
 			1 - [Service Readiness Score]
 		formatString: 0.00%;-0.00%;0.00%
-		displayFolder: measures
+		displayFolder: _measures
 		lineageTag: 8ee1d39e-c4f2-417b-ae39-4de5b3987961
 
 		changedProperty = FormatString
+
+		changedProperty = DisplayFolder
 
 	column facility_id
 		dataType: string
@@ -251,9 +255,11 @@ table fact_facility_services
 
 		annotation SummarizationSetBy = User
 
-	partition fact_facility_services = entity
+	partition dim_facility_services = entity
 		mode: directQuery
 		source
 			entityName: fact_facility_services
 			expressionSource: 'DirectQuery to AS - phc_semantic_model'
+
+	changedProperty = Name
 

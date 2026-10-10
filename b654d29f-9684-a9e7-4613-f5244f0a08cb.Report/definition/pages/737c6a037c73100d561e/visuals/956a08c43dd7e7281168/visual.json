@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
-  "name": "fc82a17d39d6aaecb469",
+  "name": "956a08c43dd7e7281168",
   "position": {
-    "x": 164.30834782843198,
-    "y": 121.76422205142727,
-    "z": 0,
-    "height": 104.15975621266669,
-    "width": 262.59994876151183,
-    "tabOrder": 0
+    "x": 462.8055906137522,
+    "y": 135.62068589413983,
+    "z": 14001,
+    "height": 113.58232443634211,
+    "width": 284.80344037769368,
+    "tabOrder": 14001
   },
   "visual": {
     "visualType": "cardVisual",
@@ -20,16 +20,14 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "fact_phc_facilities"
+                      "Entity": "dim_facility_services"
                     }
                   },
-                  "Property": "High Risk PHCs Count"
+                  "Property": "Service Readiness Score"
                 }
               },
-              "queryRef": "fact_phc_facilities.High Risk PHCs Count",
-              "nativeQueryRef": "High Risk PHCs Count",
-              "displayName": "High Risk PHCs",
-              "format": "G"
+              "queryRef": "fact_facility_services.Service Readiness Score",
+              "nativeQueryRef": "Service Readiness Score"
             }
           ]
         }
@@ -41,10 +39,10 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "fact_phc_facilities"
+                    "Entity": "dim_facility_services"
                   }
                 },
-                "Property": "High Risk PHCs Count"
+                "Property": "Service Readiness Score"
               }
             },
             "direction": "Descending"
@@ -67,7 +65,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "16D"
                 }
               }
             }
@@ -92,14 +90,14 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "16D"
+                  "Value": "9D"
                 }
               }
             },
             "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
+                  "Value": "1000D"
                 }
               }
             },
@@ -117,10 +115,17 @@
         },
         {
           "properties": {
+            "horizontalAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "'left'"
+                }
+              }
+            },
             "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "1D"
+                  "Value": "1000000D"
                 }
               }
             },
@@ -130,17 +135,10 @@
                   "Value": "0L"
                 }
               }
-            },
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "16D"
-                }
-              }
             }
           },
           "selector": {
-            "metadata": "fact_phc_facilities.High Risk PHCs Count"
+            "metadata": "fact_phc_facilities.population"
           }
         }
       ],
@@ -150,7 +148,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "16D"
                 }
               }
             },
@@ -165,6 +163,27 @@
                   }
                 }
               }
+            },
+            "position": {
+              "expr": {
+                "Literal": {
+                  "Value": "'aboveValue'"
+                }
+              }
+            },
+            "textWrap": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "matchValueAlignment": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
             }
           },
           "selector": {
@@ -176,7 +195,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "16D"
+                  "Value": "9D"
                 }
               }
             }
@@ -190,13 +209,13 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "16D"
+                  "Value": "10D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "fact_phc_facilities.High Risk PHCs Count"
+            "metadata": "fact_phc_facilities.population"
           }
         }
       ],
@@ -213,16 +232,19 @@
           }
         }
       ],
-      "fillCustom": [
+      "spacing": [
         {
           "properties": {
-            "show": {
+            "verticalSpacing": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "2L"
                 }
               }
             }
+          },
+          "selector": {
+            "id": "default"
           }
         }
       ]
@@ -261,14 +283,14 @@
             "show": {
               "expr": {
                 "Literal": {
-                  "Value": "true"
+                  "Value": "false"
                 }
               }
             },
             "transparency": {
               "expr": {
                 "Literal": {
-                  "Value": "30D"
+                  "Value": "0D"
                 }
               }
             }

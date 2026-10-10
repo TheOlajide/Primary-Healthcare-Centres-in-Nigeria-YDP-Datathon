@@ -190,6 +190,20 @@
                   "Value": "'5cd8d2a87e380a8b7ec9'"
                 }
               }
+            },
+            "showChartSpecificTooltips": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "type": {
+              "expr": {
+                "Literal": {
+                  "Value": "'Default'"
+                }
+              }
             }
           }
         }

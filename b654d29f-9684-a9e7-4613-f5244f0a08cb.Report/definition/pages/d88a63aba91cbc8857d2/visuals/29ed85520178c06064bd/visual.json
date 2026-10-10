@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "29ed85520178c06064bd",
   "position": {
-    "x": 778.83336675974647,
-    "y": 146.03125626745245,
+    "x": 765.11164273036877,
+    "y": 145.79223733620032,
     "z": 11000,
-    "height": 114.13937271479043,
-    "width": 281.99139141301163,
+    "height": 113.58232443634211,
+    "width": 300.06076754078441,
     "tabOrder": 11000
   },
   "visual": {
@@ -23,12 +23,11 @@
                       "Entity": "fact_phc_facilities"
                     }
                   },
-                  "Property": "Overall Staffing Adequacy"
+                  "Property": "Facilities With Water"
                 }
               },
-              "queryRef": "fact_phc_facilities.Overall Staffing Adequacy",
-              "nativeQueryRef": "Staffing Adequacy",
-              "displayName": "Staffing Adequacy"
+              "queryRef": "fact_phc_facilities.Facilities With Water",
+              "nativeQueryRef": "Facilities With Water"
             }
           ]
         }
@@ -43,7 +42,7 @@
                     "Entity": "fact_phc_facilities"
                   }
                 },
-                "Property": "Overall Staffing Adequacy"
+                "Property": "Facilities With Water"
               }
             },
             "direction": "Descending"
@@ -66,7 +65,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "10D"
+                  "Value": "16D"
                 }
               }
             }
@@ -116,16 +115,16 @@
         },
         {
           "properties": {
-            "fontSize": {
+            "labelDisplayUnits": {
               "expr": {
                 "Literal": {
-                  "Value": "16D"
+                  "Value": "1D"
                 }
               }
             }
           },
           "selector": {
-            "metadata": "fact_phc_facilities.Overall Staffing Adequacy"
+            "metadata": "fact_phc_facilities.Facilities With Water"
           }
         }
       ],
@@ -135,7 +134,7 @@
             "fontSize": {
               "expr": {
                 "Literal": {
-                  "Value": "13D"
+                  "Value": "16D"
                 }
               }
             },
@@ -168,20 +167,6 @@
           },
           "selector": {
             "metadata": "fact_phc_facilities.total_doctors"
-          }
-        },
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "16D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "fact_phc_facilities.Overall Staffing Adequacy"
           }
         }
       ],

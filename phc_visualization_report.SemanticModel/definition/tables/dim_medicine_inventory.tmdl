@@ -1,13 +1,13 @@
-table fact_medicine_inventory
+table dim_medicine_inventory
 	lineageTag: 8001ccd2-15bb-4443-9171-07c23f11116e
 	sourceLineageTag: 181bec59-fcc2-47e2-a335-ee58de7a37f6
 
 	measure 'Medicine Risk Score' =
 			
 			AVERAGEX(
-			    fact_medicine_inventory,
+			    dim_medicine_inventory,
 			    SWITCH(
-			        fact_medicine_inventory[stock_status],
+			        dim_medicine_inventory[stock_status],
 			        "In Stock", 0.0,
 			        "Low Stock", 0.4,
 			        "Critical", 0.75,
@@ -218,9 +218,11 @@ table fact_medicine_inventory
 
 		annotation SummarizationSetBy = User
 
-	partition fact_medicine_inventory = entity
+	partition dim_medicine_inventory = entity
 		mode: directQuery
 		source
 			entityName: fact_medicine_inventory
 			expressionSource: 'DirectQuery to AS - phc_semantic_model'
+
+	changedProperty = Name
 

@@ -1,13 +1,13 @@
-table fact_vaccine_inventory
+table dim_vaccine_inventory
 	lineageTag: f5af55e4-6332-493c-ad8e-e8287daccca0
 	sourceLineageTag: 5d7c84a5-aaab-4a2e-85e5-5d54477a51b8
 
 	measure 'Vaccine Risk Score' =
 			
 			AVERAGEX(
-			    fact_vaccine_inventory,
+			    dim_vaccine_inventory,
 			    SWITCH(
-			        fact_vaccine_inventory[stock_status],
+			        dim_vaccine_inventory[stock_status],
 			        "In Stock", 0.0,
 			        "Low Stock", 0.4,
 			        "Critical", 0.75,
@@ -16,8 +16,10 @@ table fact_vaccine_inventory
 			    )
 			)
 		formatString: 0.00\ %;-0.00\ %;0.00\ %
-		displayFolder: measures
+		displayFolder: _measures
 		lineageTag: e6acb4aa-a7fc-4fb2-8c3e-2f383e299a39
+
+		changedProperty = DisplayFolder
 
 		annotation PBI_FormatHint = {"isCustom":true}
 
@@ -245,9 +247,11 @@ table fact_vaccine_inventory
 
 		annotation SummarizationSetBy = User
 
-	partition fact_vaccine_inventory = entity
+	partition dim_vaccine_inventory = entity
 		mode: directQuery
 		source
 			entityName: fact_vaccine_inventory
 			expressionSource: 'DirectQuery to AS - phc_semantic_model'
+
+	changedProperty = Name
 

@@ -4,29 +4,37 @@ table fact_phc_facilities
 
 	measure 'total health workers' = SUM(fact_phc_facilities[total_health_workers])
 		formatString: #,0
-		displayFolder: measures
+		displayFolder: _measures
 		lineageTag: ea3330ac-6075-4ed6-a3c9-229c4516296b
 
 		changedProperty = FormatString
 
-	measure 'total facilities' = DISTINCTCOUNT(fact_facility_services[facility_id])
+		changedProperty = DisplayFolder
+
+	measure 'total facilities' = DISTINCTCOUNT(dim_facility_services[facility_id])
 		formatString: #,0
-		displayFolder: measures
+		displayFolder: _measures
 		lineageTag: 11292511-3423-4d93-8e88-a22f8f09916d
 
 		changedProperty = FormatString
 
+		changedProperty = DisplayFolder
+
 	measure 'catchment population' = SUM(fact_phc_facilities[catchment_population])
 		formatString: #,0
-		displayFolder: measures
+		displayFolder: _measures
 		lineageTag: 02143341-badf-4d78-a405-431f7bf365c7
 
 		changedProperty = FormatString
 
+		changedProperty = DisplayFolder
+
 	measure 'Number of Beds' = sum(fact_phc_facilities[number_of_beds])
 		formatString: 0
-		displayFolder: measures
+		displayFolder: _measures
 		lineageTag: 8173c8a7-8774-4eb8-a3c9-4bbba160116a
+
+		changedProperty = DisplayFolder
 
 	measure 'Doctor Adequacy' =
 			
@@ -39,8 +47,10 @@ table fact_phc_facilities
 			    1
 			)
 		formatString: 0.00\ %;-0.00\ %;0.00\ %
-		displayFolder: measures
+		displayFolder: _measures
 		lineageTag: e591ddd4-1e41-4084-95b4-9269989791c7
+
+		changedProperty = DisplayFolder
 
 		annotation PBI_FormatHint = {"isCustom":true}
 
@@ -55,8 +65,10 @@ table fact_phc_facilities
 			    1
 			)
 		formatString: 0.00\ %;-0.00\ %;0.00\ %
-		displayFolder: measures
+		displayFolder: _measures
 		lineageTag: d1b6358a-2af4-4992-adb9-12a73b38165b
+
+		changedProperty = DisplayFolder
 
 		annotation PBI_FormatHint = {"isCustom":true}
 
@@ -71,10 +83,12 @@ table fact_phc_facilities
 			    1
 			)
 		formatString: 0.00%;-0.00%;0.00%
-		displayFolder: measures
+		displayFolder: _measures
 		lineageTag: 95f7ce8a-298b-4331-9d92-c5b7d1ec244e
 
 		changedProperty = FormatString
+
+		changedProperty = DisplayFolder
 
 	measure 'CHW Adequacy' =
 			
@@ -86,8 +100,10 @@ table fact_phc_facilities
 			    ),
 			    1
 			)
-		displayFolder: measures
+		displayFolder: _measures
 		lineageTag: d357afb9-ec39-40e8-822e-ff3b9aed1cb6
+
+		changedProperty = DisplayFolder
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -102,8 +118,10 @@ table fact_phc_facilities
 			    1
 			)
 		formatString: 0.00\ %;-0.00\ %;0.00\ %
-		displayFolder: measures
+		displayFolder: _measures
 		lineageTag: 963f9057-3aba-42d7-9ce1-34bc99415ae7
+
+		changedProperty = DisplayFolder
 
 		annotation PBI_FormatHint = {"isCustom":true}
 
@@ -121,10 +139,12 @@ table fact_phc_facilities
 			    [Value]
 			)
 		formatString: 0.00%;-0.00%;0.00%
-		displayFolder: measures
+		displayFolder: _measures
 		lineageTag: 1bb17c11-4424-4408-9ade-97f50c3d933e
 
 		changedProperty = FormatString
+
+		changedProperty = DisplayFolder
 
 	measure 'Laboratory Adequacy' =
 			
@@ -137,8 +157,10 @@ table fact_phc_facilities
 			    1
 			)
 		formatString: 0.00\ %;-0.00\ %;0.00\ %
-		displayFolder: measures
+		displayFolder: _measures
 		lineageTag: 900128b5-b122-4984-b0fd-824e637cb771
+
+		changedProperty = DisplayFolder
 
 		annotation PBI_FormatHint = {"isCustom":true}
 
@@ -146,10 +168,12 @@ table fact_phc_facilities
 			1-
 			[Overall Staffing Adequacy]
 		formatString: 0.00000%;-0.00000%;0.00000%
-		displayFolder: measures
+		displayFolder: _measures
 		lineageTag: 1a3306a6-755d-44e8-a842-80432b8075ad
 
 		changedProperty = FormatString
+
+		changedProperty = DisplayFolder
 
 	measure 'Overall PHC Risk Score' =
 			
@@ -169,10 +193,12 @@ table fact_phc_facilities
 			    [Service Risk Score] * 0.25
 			)
 		formatString: 0.00%;-0.00%;0.00%
-		displayFolder: measures
+		displayFolder: _measures
 		lineageTag: fe6a19c7-6ae1-4c86-8b0a-60d9e3334061
 
 		changedProperty = FormatString
+
+		changedProperty = DisplayFolder
 
 	measure 'PHC Risk Level' =
 			
@@ -182,8 +208,10 @@ table fact_phc_facilities
 			    [Overall PHC Risk Score] >= 0.4, "Medium Risk",
 			    "Low Risk"
 			)
-		displayFolder: measures
+		displayFolder: _measures
 		lineageTag: 24e189fe-20c2-40c4-b9b5-ab72d6761e30
+
+		changedProperty = DisplayFolder
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -195,10 +223,12 @@ table fact_phc_facilities
 			        [Overall PHC Risk Score] >= 0.7
 			    )
 			)
-		displayFolder: measures
+		displayFolder: _measures
 		lineageTag: e0269456-e68e-41b6-b174-92259f161cd1
 
 		changedProperty = FormatString
+
+		changedProperty = DisplayFolder
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -212,10 +242,12 @@ table fact_phc_facilities
 			    )
 			)
 		formatString: #,0.00
-		displayFolder: measures
+		displayFolder: _measures
 		lineageTag: e1140ccb-af58-4acb-9780-6d71ba755210
 
 		changedProperty = FormatString
+
+		changedProperty = DisplayFolder
 
 	measure 'Low Risk PHCs Count' =
 			
@@ -225,8 +257,10 @@ table fact_phc_facilities
 			        [Overall PHC Risk Score] < 0.4
 			    )
 			)
-		displayFolder: measures
+		displayFolder: _measures
 		lineageTag: b8a0ab78-0970-44c2-a078-ecf8b1b4a56d
+
+		changedProperty = DisplayFolder
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
@@ -238,7 +272,7 @@ table fact_phc_facilities
 			    0
 			)
 		formatString: 0.00%;-0.00%;0.00%
-		displayFolder: measures
+		displayFolder: _measures
 		lineageTag: 2442c0a0-ac51-4ba4-8a6b-fc44ccb1142b
 
 		changedProperty = DisplayFolder
@@ -255,7 +289,7 @@ table fact_phc_facilities
 			    0
 			)
 		formatString: 0.00%;-0.00%;0.00%
-		displayFolder: measures
+		displayFolder: _measures
 		lineageTag: 0d2c6b8e-7639-4003-8fb0-925766d01eb5
 
 		changedProperty = DisplayFolder
@@ -263,6 +297,75 @@ table fact_phc_facilities
 		changedProperty = Name
 
 		changedProperty = FormatString
+
+	measure 'Facilities With Electricity' = ```
+			
+			CALCULATE(
+			    [Total Facilities], 
+			    'fact_phc_facilities'[has_electricity] = TRUE()
+			)
+			```
+		formatString: #,0
+		displayFolder: _amenities measure
+		lineageTag: 7328004e-38ad-4c44-8d69-2c85147dfd8f
+
+		changedProperty = Name
+
+		changedProperty = DisplayFolder
+
+		changedProperty = FormatString
+
+	measure 'Facilities With Water' = ```
+			
+			CALCULATE(
+			    [Total Facilities], 
+			    'fact_phc_facilities'[has_water] = TRUE()
+			)
+			
+			```
+		formatString: #,0
+		displayFolder: _amenities measure
+		lineageTag: b8fafe86-885b-4a17-be06-2c99d1cee868
+
+		changedProperty = DisplayFolder
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'Facilities With Storage Room' = ```
+			
+			CALCULATE(
+			    [Total Facilities], 
+			    'fact_phc_facilities'[has_storage_room] = TRUE()
+			)
+			
+			```
+		formatString: #,0
+		displayFolder: _amenities measure
+		lineageTag: ad015315-ddca-4264-81f2-7231061d3924
+
+		changedProperty = DisplayFolder
+
+		changedProperty = Name
+
+		changedProperty = FormatString
+
+	measure 'Facilities Without Electricity' = ```
+			
+			CALCULATE(
+			    [Total Facilities], 
+			    'fact_phc_facilities'[has_electricity] = FALSE() || ISBLANK('fact_phc_facilities'[has_electricity])
+			)
+			
+			```
+		formatString: 0
+		displayFolder: _amenities measure
+		lineageTag: 35a0ae9a-1770-439c-bade-6ecc16c3ffc9
+
+		changedProperty = DisplayFolder
+
+		changedProperty = Name
 
 	column facility_id
 		dataType: string
@@ -579,6 +682,24 @@ table fact_phc_facilities
 		annotation SummarizationSetBy = User
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'PHC Risk Level-calc column' =
+			
+			VAR RiskScore = [Overall PHC Risk Score]
+			RETURN
+			    SWITCH(
+			        TRUE(),
+			        ISBLANK(RiskScore), BLANK(),
+			        RiskScore >= 0.70, "High Risk",
+			        RiskScore >= 0.40, "Medium Risk",
+			        "Low Risk"
+			    )
+		lineageTag: ae297278-5709-4c05-87f9-421e9fbea866
+		summarizeBy: none
+
+		changedProperty = Name
+
+		annotation SummarizationSetBy = Automatic
 
 	partition fact_phc_facilities = entity
 		mode: directQuery

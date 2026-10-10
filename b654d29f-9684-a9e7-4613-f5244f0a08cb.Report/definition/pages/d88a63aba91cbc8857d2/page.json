@@ -30,5 +30,32 @@
         }
       }
     ]
-  }
+  },
+  "visualInteractions": [
+    {
+      "source": "6e525f9f67f4348f65dc",
+      "target": "07dccf1d4c270289a5f7",
+      "type": "NoFilter"
+    },
+    {
+      "source": "6e525f9f67f4348f65dc",
+      "target": "7dd6e7d5febc2778239e",
+      "type": "NoFilter"
+    },
+    {
+      "source": "6e525f9f67f4348f65dc",
+      "target": "29ed85520178c06064bd",
+      "type": "NoFilter"
+    },
+    {
+      "source": "6e525f9f67f4348f65dc",
+      "target": "7a14776d66a1c495f064",
+      "type": "NoFilter"
+    },
+    {
+      "source": "6e525f9f67f4348f65dc",
+      "target": "aec0b2ae8320aaeacfa1",
+      "type": "NoFilter"
+    }
+  ]
 }

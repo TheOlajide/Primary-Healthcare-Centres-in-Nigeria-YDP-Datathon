@@ -12,19 +12,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Medium Risk PHCs Count"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Medium Risk PHCs": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "fact_phc_facilities.total_facilities": {
 			      "Definition": {
@@ -54,19 +42,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "Low Risk PHCs Count"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "Low Risk PHCs": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "fact_phc_facilities.high_risk_phcs_count": {
 			      "Definition": {
@@ -75,19 +51,7 @@ cultureInfo en-US
 			          "ConceptualProperty": "High Risk PHCs Count"
 			        }
 			      },
-			      "State": "Generated",
-			      "Terms": [
-			        {
-			          "High Risk PHCs": {
-			            "State": "Suggested",
-			            "Source": {
-			              "Type": "External",
-			              "Agent": "PowerBI.VisualColumnRename"
-			            },
-			            "Weight": 0.9
-			          }
-			        }
-			      ]
+			      "State": "Generated"
 			    },
 			    "fact_phc_facilities.operational_status": {
 			      "Definition": {
@@ -256,6 +220,69 @@ cultureInfo en-US
 			      "Terms": [
 			        {
 			          "Lga": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fact_phc_facilities.facilities_with_electricity": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_phc_facilities",
+			          "ConceptualProperty": "Facilities With Electricity"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Electricity": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fact_phc_facilities.facilities_with_storage_room": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_phc_facilities",
+			          "ConceptualProperty": "Facilities With Storage Room"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Storage Room": {
+			            "State": "Suggested",
+			            "Source": {
+			              "Type": "External",
+			              "Agent": "PowerBI.VisualColumnRename"
+			            },
+			            "Weight": 0.9
+			          }
+			        }
+			      ]
+			    },
+			    "fact_phc_facilities.facilities_with_water": {
+			      "Definition": {
+			        "Binding": {
+			          "ConceptualEntity": "fact_phc_facilities",
+			          "ConceptualProperty": "Facilities With Water"
+			        }
+			      },
+			      "State": "Generated",
+			      "Terms": [
+			        {
+			          "Water": {
 			            "State": "Suggested",
 			            "Source": {
 			              "Type": "External",

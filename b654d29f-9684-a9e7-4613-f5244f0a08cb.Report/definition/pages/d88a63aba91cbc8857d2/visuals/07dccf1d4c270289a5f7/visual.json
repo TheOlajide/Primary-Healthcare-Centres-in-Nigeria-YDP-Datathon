@@ -2,11 +2,11 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "07dccf1d4c270289a5f7",
   "position": {
-    "x": 164.49497832425678,
-    "y": 278.6343510390472,
+    "x": 164.44008164664456,
+    "y": 278.02240608298666,
     "z": 10000,
-    "height": 674.76511516684934,
-    "width": 614.33838843548961,
+    "height": 674.71291232334568,
+    "width": 783.20946103865754,
     "tabOrder": 10000
   },
   "visual": {
@@ -40,7 +40,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "fact_medicine_inventory"
+                      "Entity": "dim_medicine_inventory"
                     }
                   },
                   "Property": "Medicine Risk Score"
@@ -59,7 +59,7 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "fact_medicine_inventory"
+                    "Entity": "dim_medicine_inventory"
                   }
                 },
                 "Property": "Medicine Risk Score"
@@ -517,7 +517,14 @@
             "text": {
               "expr": {
                 "Literal": {
-                  "Value": "'Top five facilities by Medicine risk score'"
+                  "Value": "'Top Five Facilities by Medicine Risk Score'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
                 }
               }
             }
@@ -763,6 +770,20 @@
             }
           ]
         }
+      },
+      {
+        "name": "bd6b35b4d77abfdd014d",
+        "field": {
+          "Measure": {
+            "Expression": {
+              "SourceRef": {
+                "Entity": "dim_medicine_inventory"
+              }
+            },
+            "Property": "Medicine Risk Score"
+          }
+        },
+        "type": "Advanced"
       }
     ]
   }

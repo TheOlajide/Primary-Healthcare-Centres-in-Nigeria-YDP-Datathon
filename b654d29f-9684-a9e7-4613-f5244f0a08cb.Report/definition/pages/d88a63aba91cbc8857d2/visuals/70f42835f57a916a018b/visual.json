@@ -1,13 +1,13 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
-  "name": "0f02ea11b2e291ef632b",
+  "name": "70f42835f57a916a018b",
   "position": {
-    "x": 164.49497832425678,
-    "y": 146.03125626745245,
-    "z": 6000,
-    "height": 114.13937271479043,
-    "width": 275.27731066508278,
-    "tabOrder": 6000
+    "x": 458.842457180638,
+    "y": 145.79223733620032,
+    "z": 13004,
+    "height": 113.58232443634211,
+    "width": 289.88921609872392,
+    "tabOrder": 13004
   },
   "visual": {
     "visualType": "cardVisual",
@@ -23,11 +23,12 @@
                       "Entity": "fact_phc_facilities"
                     }
                   },
-                  "Property": "total health workers"
+                  "Property": "Overall Staffing Adequacy"
                 }
               },
-              "queryRef": "fact_phc_facilities.total health workers",
-              "nativeQueryRef": "total health workers"
+              "queryRef": "fact_phc_facilities.Overall Staffing Adequacy",
+              "nativeQueryRef": "Staffing Adequacy",
+              "displayName": "Staffing Adequacy"
             }
           ]
         }
@@ -42,7 +43,7 @@
                     "Entity": "fact_phc_facilities"
                   }
                 },
-                "Property": "total health workers"
+                "Property": "Overall Staffing Adequacy"
               }
             },
             "direction": "Descending"
@@ -121,45 +122,10 @@
                   "Value": "16D"
                 }
               }
-            },
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            },
-            "labelPrecision": {
-              "expr": {
-                "Literal": {
-                  "Value": "0L"
-                }
-              }
             }
           },
           "selector": {
-            "metadata": "fact_phc_facilities.High Risk PHCs Count"
-          }
-        },
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "16D"
-                }
-              }
-            },
-            "labelDisplayUnits": {
-              "expr": {
-                "Literal": {
-                  "Value": "1D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "fact_phc_facilities.total health workers"
+            "metadata": "fact_phc_facilities.Overall Staffing Adequacy"
           }
         }
       ],
@@ -215,21 +181,7 @@
             }
           },
           "selector": {
-            "metadata": "fact_phc_facilities.High Risk PHCs Count"
-          }
-        },
-        {
-          "properties": {
-            "fontSize": {
-              "expr": {
-                "Literal": {
-                  "Value": "16D"
-                }
-              }
-            }
-          },
-          "selector": {
-            "metadata": "fact_phc_facilities.total health workers"
+            "metadata": "fact_phc_facilities.Overall Staffing Adequacy"
           }
         }
       ],

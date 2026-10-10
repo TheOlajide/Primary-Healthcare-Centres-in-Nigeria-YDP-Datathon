@@ -4,10 +4,10 @@
   "position": {
     "x": 164.49497832425678,
     "y": 77.211928601181754,
-    "z": 5000,
+    "z": 4000,
     "height": 43.641524861537519,
     "width": 684.83623628874261,
-    "tabOrder": 5000
+    "tabOrder": 4000
   },
   "visual": {
     "visualType": "textbox",
@@ -19,7 +19,7 @@
               {
                 "textRuns": [
                   {
-                    "value": "This page breaks down metrics that indicates risk and operational readiness into each state/LGA ",
+                    "value": "This page shows metrics that measure risk and operational readiness for each facility",
                     "textStyle": {
                       "fontSize": "12pt"
                     }

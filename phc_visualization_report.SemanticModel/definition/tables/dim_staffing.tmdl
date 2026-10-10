@@ -1,4 +1,4 @@
-table fact_staffing
+table dim_staffing
 	lineageTag: 318b55af-e888-4502-b8a1-b2aa0fcc2249
 	sourceLineageTag: 3948334b-c619-48bc-a2d8-09eee3d5ed35
 
@@ -137,9 +137,11 @@ table fact_staffing
 
 		annotation SummarizationSetBy = User
 
-	partition fact_staffing = entity
+	partition dim_staffing = entity
 		mode: directQuery
 		source
 			entityName: fact_staffing
 			expressionSource: 'DirectQuery to AS - phc_semantic_model'
+
+	changedProperty = Name
 

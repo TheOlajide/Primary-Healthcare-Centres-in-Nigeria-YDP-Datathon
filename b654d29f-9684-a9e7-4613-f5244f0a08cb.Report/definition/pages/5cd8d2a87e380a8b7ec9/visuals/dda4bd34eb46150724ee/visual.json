@@ -20,7 +20,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "fact_medicine_inventory"
+                      "Entity": "dim_medicine_inventory"
                     }
                   },
                   "Property": "Medicine Risk Score"
@@ -39,7 +39,7 @@
               "Measure": {
                 "Expression": {
                   "SourceRef": {
-                    "Entity": "fact_medicine_inventory"
+                    "Entity": "dim_medicine_inventory"
                   }
                 },
                 "Property": "Medicine Risk Score"

@@ -2,12 +2,12 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/2.13.0/schema.json",
   "name": "65f804db578b00239ea4",
   "position": {
-    "x": 164.30834782843198,
-    "y": 244.99548292275125,
-    "z": 9000,
-    "height": 723.25013820908,
-    "width": 1516.9181397732023,
-    "tabOrder": 9000
+    "x": 164.44008164664456,
+    "y": 235.64094174106796,
+    "z": 8000,
+    "height": 732.35170382835508,
+    "width": 1517.2564234406893,
+    "tabOrder": 8000
   },
   "visual": {
     "visualType": "pivotTable",
@@ -86,7 +86,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "fact_medicine_inventory"
+                      "Entity": "dim_medicine_inventory"
                     }
                   },
                   "Property": "Medicine Risk Score"
@@ -100,7 +100,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "fact_vaccine_inventory"
+                      "Entity": "dim_vaccine_inventory"
                     }
                   },
                   "Property": "Vaccine Risk Score"
@@ -114,7 +114,7 @@
                 "Measure": {
                   "Expression": {
                     "SourceRef": {
-                      "Entity": "fact_facility_services"
+                      "Entity": "dim_facility_services"
                     }
                   },
                   "Property": "Service Readiness Score"
@@ -135,7 +135,8 @@
                 }
               },
               "queryRef": "fact_phc_facilities.Overall Staffing Adequacy",
-              "nativeQueryRef": "Overall Staffing Adequacy"
+              "nativeQueryRef": "Staffing Adequacy",
+              "displayName": "Staffing Adequacy"
             }
           ]
         }
@@ -529,6 +530,40 @@
               "expr": {
                 "Literal": {
                   "Value": "'Default'"
+                }
+              }
+            }
+          }
+        }
+      ],
+      "title": [
+        {
+          "properties": {
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'PHC Risk Score Matrix'"
+                }
+              }
+            },
+            "fontSize": {
+              "expr": {
+                "Literal": {
+                  "Value": "16D"
+                }
+              }
+            },
+            "fontFamily": {
+              "expr": {
+                "Literal": {
+                  "Value": "'''Segoe UI Semibold'', wf_segoe-ui_semibold, helvetica, arial, sans-serif'"
                 }
               }
             }

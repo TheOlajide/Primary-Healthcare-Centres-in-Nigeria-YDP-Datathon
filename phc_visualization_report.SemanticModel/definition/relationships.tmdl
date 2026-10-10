@@ -1,16 +1,16 @@
 relationship 0abc05d6-7d50-4b08-b34d-2c41c62c140f
-	fromColumn: fact_facility_services.facility_id
+	fromColumn: dim_facility_services.facility_id
 	toColumn: fact_phc_facilities.facility_id
 
 relationship e49662c4-8d9d-423e-b218-a8e5b79d57a2
-	fromColumn: fact_medicine_inventory.facility_id
+	fromColumn: dim_medicine_inventory.facility_id
 	toColumn: fact_phc_facilities.facility_id
 
 relationship 9cbf97a9-1a91-4566-8a88-bf135b194923
-	fromColumn: fact_staffing.facility_id
+	fromColumn: dim_staffing.facility_id
 	toColumn: fact_phc_facilities.facility_id
 
 relationship 889cfc7e-829a-4115-acd4-317beacc518f
-	fromColumn: fact_vaccine_inventory.facility_id
+	fromColumn: dim_vaccine_inventory.facility_id
 	toColumn: fact_phc_facilities.facility_id
 
